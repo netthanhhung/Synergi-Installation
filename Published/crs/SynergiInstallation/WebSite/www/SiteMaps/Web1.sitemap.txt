@@ -1,0 +1,767 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode
+	title="Logo"
+	description="Accor Logo"
+	roles="Organisation Administrator, Site Administrator, Department Manager">
+	<siteMapNode
+	  url="DepartmentManager/ReportsSL.aspx"
+	  title="Reports"
+	  description="Reports"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  title="Administration"
+	  description="Administration"
+	  roles="Organisation Administrator, Site Administrator">
+	  <siteMapNode
+		url="SiteAdmin/SiteAdmin.aspx"
+		title="Sites"
+		description="Site Settings"
+		roles="Organisation Administrator, Site Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/DepartmentAdminSL2.aspx"
+		title="Departments"
+		description="Departments"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/SiteDepartmentsAdminSL.aspx"
+		title="Link Departments"
+		description="Associate Departments with Sites"
+		roles="Organisation Administrator, Site Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/CustomerAdminSL.aspx"
+		title="Customer Administration"
+		description="Customer Administration"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="DepartmentManager/InvoicingSL.aspx"
+		title="Service Invoicing"
+		description="Service Invoicing"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/DashboardManager.aspx"
+		title="Layout Manager"
+		description="Layout Manager"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode
+		url="GeneralUser/CompanyProfile.aspx"
+		title="Company Profile"
+		description="Company Profile"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="OrganisationAdmin/SalesPersonImageManager.aspx"
+		title="Sales Person Image Manager"
+		description="Sales Person Image Manager"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/ParameterSetValuesAdmin.aspx"
+		title="Default Values"
+		description="Default Values"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	</siteMapNode>
+	<siteMapNode
+	  url="Default.aspx"
+	  title="Home"
+	  description="Home Page"
+	  roles="*" />
+	<siteMapNode
+	  url="ChangePasswordSL.aspx"
+	  title="Change Password"
+	  description="Change Password"
+	  roles="*" />
+	<siteMapNode
+	  title="System Administration"
+	  description="System Administration"
+	  roles="Organisation Administrator, Site Administrator">
+	  <siteMapNode
+		url="OrganisationAdmin/CentreTypesPage.aspx"
+		title="Centre Types"
+		description="Centre Types"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="Prompts/Logins.xlsx"
+		title="Prompts"
+		description="Organisation Administrator Prompts"
+		  target="_blank"
+		roles="Organisation Administrator" />
+	</siteMapNode>
+	<siteMapNode
+	  url="Logon.aspx?Logout=true"
+	  title="Logout"
+	  description="Logout"
+	  roles="*" />
+
+	<siteMapNode
+	  title="Old Menu Items"
+	  description="Access to previous versions of pages where available"
+	  roles="Organisation Administrator, Site Administrator, Department Manager">
+	  <siteMapNode
+		url="DepartmentManager/Reports.aspx"
+		title="Reports (Old)"
+		description="Reports (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="OrganisationAdmin/OrganisationAdmin.aspx"
+		title="Sites (Old)"
+		description="Site Settings (Old)"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/DepartmentAdmin.aspx"
+		title="Departments (Old)"
+		description="Departments (Old)"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/SiteDepartmentsAdmin.aspx"
+		title="Link Departments (Old)"
+		description="Associate Departments with Sites (Old)"
+		roles="Organisation Administrator, Site Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/CustomerAdmin.aspx"
+		title="Customer Administration (Old)"
+		description="Customer Administration (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="DepartmentManager/Invoicing.aspx"
+		title="Service Invoicing (Old)"
+		description="Service Invoicing (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="ChangePassword.aspx"
+		title="Change Password (Old)"
+		description="Change Password (Old)"
+		roles="*" />
+	</siteMapNode>
+  </siteMapNode>
+
+  <siteMapNode
+	title="Sales"
+	description="Sales"
+	roles="Organisation Administrator, Site Administrator, Department Manager">
+	<siteMapNode
+	  url="SiteAdmin/DistributionChannelAdmin.aspx"
+	  title="Customer Administration"
+	  description="Customer Administration"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="SiteAdmin/ForecastDistributionChannelsAdmin.aspx?Type=Sale"
+	  title="Customer Forecasts"
+	  description="Customer Forecasts"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="SiteAdmin/ForecastDistributionChannelsAdmin.aspx?Type=GM"
+	  title="Revenue Stream Forecasts"
+	  description="Revenue Stream (Channel) Forecasts"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="SiteAdmin/SalesPersonForecastAdmin.aspx"
+	  title="Sale Forecasts"
+	  description="Sale Forecasts"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+			
+	<siteMapNode
+	  url="SiteAdmin/MarketChart.aspx"
+	  title="Market Charts"
+	  description="Market Chart"
+	  roles="Organisation Administrator, Site Administrator, Department Manager">
+	  <siteMapNode
+		url="SiteAdmin/MarketChart.aspx"
+		title="All"
+		description="Show all report types"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/MarketChart.aspx?ReportType=SourceOfBusiness"
+		title="Source of Business"
+		description="Source of Business"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/MarketChart.aspx?ReportType=MarketSegment"
+		title="Market Segment"
+		description="Market Segment"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/MarketChart.aspx?ReportType=DCByRateCode"
+		title="DC by Rate Code"
+		description="DC by Rate Code"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/MarketChart.aspx?ReportType=Region"
+		title="Geographical by Region"
+		description="Geographical by Region"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/MarketChart.aspx?ReportType=Country"
+		title="Geographical by Country"
+		description="Geographical by Country"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/MarketChart.aspx?ReportType=GuestType"
+		title="Guest Type"
+		description="Guest Type"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/MaterialisationChartAdmin.aspx"
+		title="Materialisation Chart"
+		description="Materialisation Chart"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	</siteMapNode>
+	<siteMapNode
+	  url="SiteAdmin/SalesDashboard.aspx"
+	  title="Sales Productivity Dashboard"
+	  description="Sales Productivity Dashboard"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="SiteAdmin/SalesHome.aspx"
+	  title="Sales Home"
+	  description="Sales Home"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+  </siteMapNode>
+
+  <siteMapNode
+	title="Yield"
+	description="Yield"
+	roles="Organisation Administrator, Site Administrator">
+	<siteMapNode
+		title="Season Management"
+		description="Season Management"
+		roles="Organisation Administrator, Site Administrator, Department Manager">
+		<siteMapNode
+			url="SiteAdmin/SiteDemandLevelAdmin.aspx"
+			title="Season Calendar"
+			description="Season Calendar"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+	</siteMapNode>
+	<siteMapNode
+		title="Rate Management"
+		description="Rate Management"
+		roles="Organisation Administrator, Site Administrator, Department Manager">
+		<siteMapNode
+			url="https://ezyrates.com/home.cfm"
+			title="ezyRates"
+			description="ezyRates (click to leave ezySoftware)"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+		<siteMapNode
+			url="SiteAdmin/DaymarkerCalendar.aspx"
+			title="Daymarker Calendar"
+			description="Daymarker Calendar"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+		<siteMapNode
+			url="SiteAdmin/PickupMomentumChart.aspx"
+			title="Booking Curve Dashboard"
+			description="Booking Curve Dashboard (Daily Demand Charts / Pickup Momentum Charts)"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode
+			url="SiteAdmin/PickupMomentumChart2.aspx"
+			title="Booking Curve Dashboard (Batched)"
+			description="Booking Curve Dashboard (Daily Demand Charts / Pickup Momentum Charts)"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode
+			url="DepartmentManager/YieldProfileCharts.aspx"
+			title="Yield Profile Dashboard"
+			description="Yield Profile Dashboard"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+	</siteMapNode>
+	<siteMapNode
+		title="Inventory Management"
+		description="Inventory Management"
+		roles="Organisation Administrator, Site Administrator, Department Manager">
+		<siteMapNode
+			url="DepartmentManager/RateYieldLevel.aspx"
+			title="Yield Level Pane"
+			description="Yield Level Pane"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+	</siteMapNode>
+	<siteMapNode
+		title="Displacement Analysis"
+		description="Displacement Analysis"
+		roles="Organisation Administrator, Site Administrator, Department Manager">
+	   <siteMapNode
+			url="SiteAdmin/DisplacementAnalysisCalendar.aspx"
+			title="Displacement Data"
+			description="Displacement Data"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+	   <siteMapNode
+			url="SiteAdmin/MinimumRateThreshold.aspx"
+			title="Minimum Rate Threshold"
+			description="Minimum Rate Threshold"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+			url="SiteAdmin/DisplacementAnalysisResults.aspx"
+			title="Analysis Results"
+			description="Analysis Results"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+			
+	</siteMapNode>
+	<siteMapNode
+		title="Dashboards"
+		description="Dashboards"
+		roles="Organisation Administrator, Site Administrator, Department Manager">
+		<siteMapNode
+			url="SiteAdmin/PickupMomentumChart.aspx"
+			title="Booking Curve Dashboard"
+			description="Booking Curve Dashboard (Daily Demand Charts / Pickup Momentum Charts)"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+		<siteMapNode
+			url="DepartmentManager/YieldProfileCharts.aspx"
+			title="Yield Profile Dashboard"
+			description="Yield Profile Dashboard"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+		<siteMapNode
+			url="SiteAdmin/PickupChartAdmin.aspx"
+			title="Pickup Chart"
+			description="Pickup Chart"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+	</siteMapNode>
+	<siteMapNode
+		title="Reports"
+		description="Reports"
+		roles="Organisation Administrator, Site Administrator, Department Manager">
+		<siteMapNode
+			url="DepartmentManager/DayMarkerReport.aspx"
+			title="Daymarker Report"
+			description="Daymarker Report"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+		<siteMapNode
+			url="DepartmentManager/DayMarkerAuditTrail.aspx"
+			title="Audit Trail"
+			description="Audit Trail"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+		<siteMapNode
+			url="DepartmentManager/RateSeasonUpdateReport.aspx"
+			title="Rate/Season Update"
+			description="Rate/Season Update"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+			
+	</siteMapNode>
+	<siteMapNode
+		title="Administration"
+		description="Administration"
+		roles="Organisation Administrator, Site Administrator, Department Manager">
+		<siteMapNode	
+			url="SiteAdmin/SiteSeasonAdmin.aspx"		
+			title="Site Season Administration"
+			description="Site Season Administration"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />	
+		<siteMapNode
+			url="SiteAdmin/SiteDemandCurveAdmin.aspx"
+			title="Demand Curve Administration"
+			description="Demand Curve Administration"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />
+		<siteMapNode	
+			url="SiteAdmin/SiteDaymarkerAdmin.aspx"		
+			title="Daymarker Administration"
+			description="Daymarker Administration"
+			roles="Organisation Administrator, Site Administrator, Department Manager" />		
+		<siteMapNode
+			url="OrganisationAdmin/DaymarkerTypeAdmin.aspx"
+			title="Daymarker Type Administration"
+			description="Daymarker Type Administration"
+			roles="Organisation Administrator" />	
+		<siteMapNode
+			url="SiteAdmin/SiteRateGroupAdmin.aspx"
+			title="Rate Group Administration"
+			description="Rate Group Administration"
+			roles="Organisation Administrator" />
+    <siteMapNode
+			url="SiteAdmin/YieldEventAdmin.aspx"
+			title="Yield Event Administration"
+			description="Yield Event Administration"
+			roles="Organisation Administrator" />        
+  </siteMapNode>	  
+  </siteMapNode>
+
+  <siteMapNode
+	title="Competitors"
+	description="Competitors"
+	roles="Organisation Administrator, Site Administrator, Department Manager">
+	<siteMapNode
+	  url="SiteAdmin/SiteCompetitorsAdminSL.aspx"
+	  title="Competitor Administration"
+	  description="Competitor Administration"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="DepartmentManager/CompetitorRatesChart.aspx"
+	  title="Competitor Rates Chart"
+	  description="Competitor Rates Chart"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="https://www.strglobal.com/Login/Login.aspx"
+	  target="_blank"
+	  title="The Bench Reports"
+	  description="The Bench Reports"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url=""
+	  title="Rates Alarm Reports"
+	  description="Rates Alarm Reports"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="http://www.accorfranchise.com.au/#/welcome"
+	  title="Franchise Net"
+	  description="Franchise Net Login"
+	  roles="Organisation Administrator, Site Administrator" />
+	<siteMapNode
+	  url="DepartmentManager/CompetitorStatisticsReport.aspx"
+	  title="Competitor Statistics Report"
+	  description="Competitor Statistics Report"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  
+  </siteMapNode>
+
+  <siteMapNode
+	title="Guest"
+	description="Guest"
+	roles="Organisation Administrator, Site Administrator, Department Manager">
+	<siteMapNode
+	  url="SiteAdmin/FeedbackChart.aspx"
+	  title="Guest Feedback Chart"
+	  description="Guest Feedback Chart"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url=""
+	  title="Medallia Reports"
+	  description="Medallia Reports"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+  </siteMapNode>
+
+  <siteMapNode
+	title="Energy"
+	description="Energy"
+	roles="Organisation Administrator, Site Administrator, Department Manager">
+	<siteMapNode
+	  url="DepartmentManager/EnergyChart.aspx"
+	  title="Energy Chart"
+	  description="Energy Administration"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+  <siteMapNode
+    title="EMS"
+    description="EMS"
+    roles="Organisation Administrator, Site Administrator, Department Manager">
+    <siteMapNode
+      url="DepartmentManager/EmsChart.aspx?PeriodType=6"
+      title="Hourly EMS Chart"
+      description="Hourly EMS Chart"
+      roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode
+      url="DepartmentManager/EmsChart.aspx?PeriodType=1"
+      title="Daily EMS Chart"
+      description="Daily EMS Chart"
+      roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode
+      url="DepartmentManager/EmsChart.aspx?PeriodType=2"
+      title="Weekly EMS Chart"
+      description="Weekly EMS Chart"
+      roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode
+      url="DepartmentManager/EmsChart.aspx?PeriodType=3"
+      title="Monthly EMS Chart"
+      description="Monthly EMS Chart"
+      roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode
+      url="DepartmentManager/EmsChart.aspx?PeriodType=5"
+      title="Yearly EMS Chart"
+      description="Yearly EMS Chart"
+      roles="Organisation Administrator, Site Administrator, Department Manager" />    
+  </siteMapNode>
+	<siteMapNode
+	  url="http://150.101.176.129/MetaSys/"
+	  title="BMS Reports"
+	  description="BMS Reports"
+	  target="_blank"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="http://10.10.0.66/web"
+	  title="EMS Reports"
+	  description="EMS Reports"
+	  target="_blank"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+  </siteMapNode>
+
+  <siteMapNode
+	title="Employees"
+	description="Employees"
+	roles="Organisation Administrator, Site Administrator, Department Manager">
+	<siteMapNode
+	  url="GeneralUser/CheckInSL.aspx"
+	  title="Timecard"
+	  description="Timecard"
+	  roles="Organisation Administrator, Site Administrator, Department Manager, General User" />
+	<siteMapNode
+	  url="DepartmentManager/EmployeesSL.aspx"
+	  title="Employee Management"
+	  description="Employee Management"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  title="Rostering"
+	  description="Rostering"
+	  roles="Organisation Administrator, Site Administrator, Department Manager">
+	  <siteMapNode
+		url="DepartmentManager/EmployeesRosterSL.aspx"
+		title="Roster"
+		description="Roster"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/BudgetVarianceRoster.aspx"
+		title="Roster Variance"
+		description="Roster Variance"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="DepartmentManager/ReportsSL.aspx"
+		title="Reports"
+		description="Reports"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+		url="DepartmentManager/RosterVarianceDetailed.aspx"
+		title="Roster Variance Detailed"
+		description="Roster Variance Detailed"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	</siteMapNode>
+	<siteMapNode
+	  title="Awards"
+	  description="Award Administration"
+	  roles="Organisation Administrator, Site Administrator, Department Manager">
+	  <siteMapNode
+		url="DepartmentManager/UpdateLoadingsSL.aspx"
+		title="Update Loadings"
+		description="Update Loadings"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="OrganisationAdmin/LoadingCategorySL.aspx"
+		title="Loading Categories"
+		description="Loading Categories"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/HolidayLoadingSL.aspx"
+		title="Public Holiday Loadings"
+		description="Public Holiday Loading"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/ShiftLoadingSL.aspx"
+		title="Shift Loadings"
+		description="Shift Loadings"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/AwardAdminSL.aspx"
+		title="Awards"
+		description="Award Administration"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/OvertimeAdmin.aspx"
+		title="Overtime Administration"
+		description="Overtime Administration"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/SiteAwardAdminSL.aspx"
+		title="Link Awards"
+		description="Associate Awards with Sites"
+		roles="Organisation Administrator, Site Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/SitePublicHolidayAdminSL.aspx"
+		title="Link Public Holidays"
+		description="Associate Public Holidays with Sites"
+		roles="Organisation Administrator, Site Administrator" />
+	</siteMapNode>
+	<siteMapNode
+	  title="Productivity"
+	  description="Productivity"
+	  roles="Organisation Administrator, Site Administrator, Department Manager">
+	  <siteMapNode
+		url="DepartmentManager/WageOptimisationReport.aspx"
+		title="Wage Optimisation Report"
+		description="Wage Optimisation Report"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="DepartmentManager/ProductivityReport.aspx"
+		title="Productivity Report"
+		description="Productivity Report"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="DepartmentManager/RosteringSL.aspx"
+		title="Wage Optimisation Admin"
+		description="Wage Optimisation Admin"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	</siteMapNode>
+	<siteMapNode
+	  title="Payroll"
+	  description="Payroll"
+	  roles="Organisation Administrator, Site Administrator, Department Manager">
+	  <siteMapNode
+		url="DepartmentManager/PayrollAnalysisReport.aspx"
+		title="Payroll Analysis"
+		description="Payroll Analysis Report"
+		roles="Organisation Administrator, Site Administrator, Department Manager" /> 
+	 <siteMapNode
+		url="DepartmentManager/PayrollAnalysisByCostCentreReport.aspx"
+		title="Payroll Analysis By Cost Centre"
+		description="Payroll Analysis By Cost Centre Report"
+		roles="Organisation Administrator, Site Administrator, Department Manager" /> 			     
+	</siteMapNode>
+	
+	<siteMapNode
+	  title="Old Menu Items"
+	  description="Access to previous versions of pages where available"
+	  roles="Organisation Administrator, Site Administrator, Department Manager">
+	  <siteMapNode
+		url="GeneralUser/CheckIn.aspx"
+		title="Timecard (Old)"
+		description="Timecard (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager, General User" />
+	  <siteMapNode
+		url="DepartmentManager/Employees.aspx"
+		title="Employee Management (Old)"
+		description="Employee Management (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="DepartmentManager/Reports.aspx"
+		title="Reports (Old)"
+		description="Reports (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="DepartmentManager/Rostering.aspx"
+		title="Roster (Old)"
+		description="Rostering (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="DepartmentManager/UpdateLoadings.aspx"
+		title="Update Loadings (Old)"
+		description="Update Loadings (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="OrganisationAdmin/LoadingCategory.aspx"
+		title="Loading Categories (Old)"
+		description="Loading Categories (Old)"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/HolidayLoading.aspx"
+		title="Public Holiday Loadings (Old)"
+		description="Public Holiday Loading (Old)"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/ShiftLoadingAdmin.aspx"
+		title="Shift Loadings (Old)"
+		description="Shift Loadings (Old)"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/AwardAdmin.aspx"
+		title="Awards (Old)"
+		description="Award Administration (Old)"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/SiteAwardAdmin.aspx"
+		title="Link Awards (Old)"
+		description="Associate Awards with Sites (Old)"
+		roles="Organisation Administrator, Site Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/SitePublicHolidaysAdmin.aspx"
+		title="Link Public Holidays (Old)"
+		description="Associate Public Holidays with Sites (Old)"
+		roles="Organisation Administrator, Site Administrator" />
+	</siteMapNode>
+  </siteMapNode>
+
+  <siteMapNode
+	title="Budget"
+	description="Budget"
+	roles="Organisation Administrator, Site Administrator, Department Manager" >
+	<siteMapNode
+	  url="SiteAdmin/RevenueEntryAdminSL2.aspx"
+	  title="Sales Entry"
+	  description="Sales Entry"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="SiteAdmin/ForecastEntryAdminSL2.aspx"
+	  title="Forecast Entry"
+	  description="Forecast Entry"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  title="Utilities"
+	  description="Budget Utilities"
+	  roles="Organisation Administrator, Site Administrator, Department Manager">
+	  <siteMapNode
+		url="DepartmentManager/AccountCodeSearchSL.aspx"
+		title="Account Code Search"
+		description="Search for an account code"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/SiteSpecificImportSL.aspx"
+		title="Actuals Import"
+		description="Import actuals data"
+		roles="Organisation Administrator, Site Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/CompleteFinancialsSL.aspx"
+		title="Complete Financials"
+		description="Complete Financials"
+		roles="Organisation Administrator, CF Administrator" />
+	</siteMapNode>
+	<siteMapNode
+	  url="SiteAdmin/BudgetAdminSL.aspx"
+	  title="Budget Administration"
+	  description="Lock or Restore Budgets"
+	  roles="Organisation Administrator, Site Administrator" />
+	<siteMapNode
+	  url="SiteAdmin/KpiAdminSL.aspx"
+	  title="KPI Entry"
+	  description="KPI Entry"
+	  roles="Organisation Administrator, Site Administrator" />
+	<siteMapNode
+	  url="OrganisationAdmin/FinancialPeriodsSL.aspx"
+	  title="Financial Periods"
+	  description="Financial Periods"
+	  roles="Organisation Administrator" />
+	<siteMapNode
+	  url="SiteAdmin/SalesVarianceRoster.aspx"
+	  title="Sales Variance"
+	  description="Sales variance"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	<siteMapNode
+	  url="SiteAdmin/ForecastCopying.aspx"
+	  title="Forecast Copying"
+	  description="Copy forecast data from last year"
+	  roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  
+	<siteMapNode
+	  title="Old Menu Items"
+	  description="Access to previous versions of pages where available"
+	  roles="Organisation Administrator, Site Administrator, Department Manager">
+	  <siteMapNode
+		url="SiteAdmin/RevenueEntryAdmin.aspx"
+		title="Sales Entry (Old)"
+		description="Sales Entry (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/ForecastEntryAdmin.aspx"
+		title="Forecast Entry (Old)"
+		description="Forecast Entry (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="DepartmentManager/AccountCodeSearch.aspx"
+		title="Account Code Search (Old)"
+		description="Search for an account code (Old)"
+		roles="Organisation Administrator, Site Administrator, Department Manager" />
+	  <siteMapNode
+		url="SiteAdmin/SiteSpecificImport.aspx"
+		title="Actuals Import (Old)"
+		description="Import actuals data (Old)"
+		roles="Organisation Administrator, Site Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/CompleteFinancials.aspx"
+		title="Complete Financials (Old)"
+		description="Complete Financials (Old)"
+		roles="Organisation Administrator, CF Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/BudgetAdmin.aspx"
+		title="Budget Administration (Old)"
+		description="Lock or Restore Budgets (Old)"
+		roles="Organisation Administrator, Site Administrator" />
+	  <siteMapNode
+		url="OrganisationAdmin/FinancialPeriods.aspx"
+		title="Financial Periods (Old)"
+		description="Financial Periods (Old)"
+		roles="Organisation Administrator" />
+	  <siteMapNode
+		url="SiteAdmin/KpiAdmin.aspx"
+		title="KPI Entry (Old)"
+		description="KPI Entry"
+		roles="Organisation Administrator, Site Administrator" />
+	</siteMapNode>
+  </siteMapNode>
+</siteMap>

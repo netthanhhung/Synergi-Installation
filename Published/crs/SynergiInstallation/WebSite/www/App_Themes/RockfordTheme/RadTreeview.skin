@@ -1,0 +1,3 @@
+<%@ Register Assembly="RadTreeView.Net2" Namespace="Telerik.WebControls" TagPrefix="radT" %>
+
+<radT:RadTreeView runat="server" Skin="Color" />    

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="ezyRoster"  description="Rostering" roles="Organisation Administrator, Site Administrator, Department Manager">
+    <siteMapNode url="DepartmentManager/Rostering.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Roster"  description="Rostering" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode url="SiteAdmin/KpiAdmin.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> KPI Entry" description="KPI Entry" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+    <siteMapNode url="DepartmentManager/Invoicing.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'&gt; Invoicing" description="Invoicing" roles="Organisation Administrator, Site Administrator, Department Manager"></siteMapNode>
+  </siteMapNode>
+</siteMap>

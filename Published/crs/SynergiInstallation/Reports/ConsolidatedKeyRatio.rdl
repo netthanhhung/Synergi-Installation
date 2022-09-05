@@ -1,0 +1,4195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="TimeClock">
+      <DataSourceReference>TimeClock</DataSourceReference>
+      <rd:DataSourceID>8492c471-8c04-470f-a2fa-549f38ca3ca6</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>0.1cm</BottomMargin>
+  <RightMargin>0.1cm</RightMargin>
+  <PageWidth>38cm</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="UserID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>3CB9B566-034C-4866-8DF5-7E3A69597DE2</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>false</AllowBlank>
+      <Prompt>UserID</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="OrganisationID">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>34</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>OrganisationID</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="UserSiteID">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>UserSiteID</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="ListSites">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>True</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ListSites</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="SiteIDs">
+      <DataType>String</DataType>
+      <Prompt>SiteIDs</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DisplayType">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Display Type</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Excluding Base</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>2</Value>
+            <Label>Including Base</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CalculationType">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Calculation Type</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Actual</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>2</Value>
+            <Label>Estimate</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ComparisonType">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>4</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Comparison Type</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>2</Value>
+            <Label>Estimate</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>3</Value>
+            <Label>Forecast</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>4</Value>
+            <Label>Budget</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>5</Value>
+            <Label>Last Year</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>6</Value>
+            <Label>Previous Year</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=IIF(WeekDay(Today) = 1, DateAdd("d", -13, Today), DateAdd("d", -5 - Weekday(Today), Today))</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=IIF(WeekDay(Today) = 1, DateAdd("d", -7, Today), DateAdd("d", 1 - Weekday(Today), Today))</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>End Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CultureInfo">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Culture Info</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>30cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Table Name="table3">
+        <Left>19.5cm</Left>
+        <DataSetName>KeyImprovementRatio</DataSetName>
+        <Top>5.5cm</Top>
+        <TableGroups>
+          <TableGroup>
+            <Grouping Name="table3_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Fields!DepartmentID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+          <TableGroup>
+            <Grouping Name="table3_Group2">
+              <GroupExpressions>
+                <GroupExpression>=Fields!DepartmentCentreID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Chart Name="chart2">
+                          <Legend>
+                            <Visible>true</Visible>
+                            <Style>
+                              <BorderStyle>
+                                <Default>Solid</Default>
+                              </BorderStyle>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                            <Position>TopLeft</Position>
+                          </Legend>
+                          <Subtype>Plain</Subtype>
+                          <Title>
+                            <Style />
+                          </Title>
+                          <CategoryAxis>
+                            <Axis>
+                              <Title>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </Title>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                              <MajorGridLines>
+                                <Style>
+                                  <BorderStyle>
+                                    <Default>Solid</Default>
+                                  </BorderStyle>
+                                </Style>
+                              </MajorGridLines>
+                              <MinorGridLines>
+                                <Style>
+                                  <BorderStyle>
+                                    <Default>Solid</Default>
+                                  </BorderStyle>
+                                </Style>
+                              </MinorGridLines>
+                              <MajorTickMarks>Outside</MajorTickMarks>
+                              <Min>0</Min>
+                              <Visible>true</Visible>
+                            </Axis>
+                          </CategoryAxis>
+                          <PointWidth>0</PointWidth>
+                          <ThreeDProperties>
+                            <Rotation>30</Rotation>
+                            <Inclination>30</Inclination>
+                            <Shading>Simple</Shading>
+                            <WallThickness>50</WallThickness>
+                          </ThreeDProperties>
+                          <DataSetName>KeyImprovementRatio</DataSetName>
+                          <SeriesGroupings>
+                            <SeriesGrouping>
+                              <StaticSeries>
+                                <StaticMember>
+                                  <Label>=Trim(Fields!LevelName.Value)</Label>
+                                </StaticMember>
+                                <StaticMember>
+                                  <Label>=Code.ComparisonLabel()</Label>
+                                </StaticMember>
+                              </StaticSeries>
+                            </SeriesGrouping>
+                          </SeriesGroupings>
+                          <PlotArea>
+                            <Style>
+                              <BorderStyle>
+                                <Default>Solid</Default>
+                              </BorderStyle>
+                              <BackgroundColor>SkyBlue</BackgroundColor>
+                              <BackgroundGradientType>Center</BackgroundGradientType>
+                            </Style>
+                          </PlotArea>
+                          <ValueAxis>
+                            <Axis>
+                              <Title>
+                                <Caption>= IIF(Fields!CentreTypeID.Value = 1, "Total Sales", "Key Ratio")</Caption>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </Title>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>=IIF(Fields!CentreTypeID.Value = 2, "P1", IIF(Fields!CentreTypeID.Value = 1, "C0", "C2"))</Format>
+                              </Style>
+                              <MajorGridLines>
+                                <ShowGridLines>true</ShowGridLines>
+                                <Style>
+                                  <BorderStyle>
+                                    <Default>Solid</Default>
+                                  </BorderStyle>
+                                </Style>
+                              </MajorGridLines>
+                              <MinorGridLines>
+                                <Style>
+                                  <BorderStyle>
+                                    <Default>Solid</Default>
+                                  </BorderStyle>
+                                </Style>
+                              </MinorGridLines>
+                              <MajorTickMarks>Outside</MajorTickMarks>
+                              <Min>0</Min>
+                              <Margin>true</Margin>
+                              <Visible>true</Visible>
+                              <Scalar>true</Scalar>
+                            </Axis>
+                          </ValueAxis>
+                          <ZIndex>1</ZIndex>
+                          <Type>Bar</Type>
+                          <CategoryGroupings>
+                            <CategoryGrouping>
+                              <DynamicCategories>
+                                <Grouping Name="chart2_CategoryGroup1">
+                                  <GroupExpressions>
+                                    <GroupExpression>=Fields!SiteID.Value</GroupExpression>
+                                  </GroupExpressions>
+                                </Grouping>
+                                <Label>=IIF(Fields!SiteID.Value = 13, "GRMEA", Code.SiteNameById(Fields!SiteID.Value))</Label>
+                              </DynamicCategories>
+                            </CategoryGrouping>
+                          </CategoryGroupings>
+                          <Palette>SemiTransparent</Palette>
+                          <ChartData>
+                            <ChartSeries>
+                              <DataPoints>
+                                <DataPoint>
+                                  <DataValues>
+                                    <DataValue>
+                                      <Value>=IIF(Fields!CentreTypeID.Value = 2, Fields!Calculation.Value/100,Fields!Calculation.Value)</Value>
+                                    </DataValue>
+                                  </DataValues>
+                                  <DataLabel>
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>8pt</FontSize>
+                                      <Format>=IIF(Fields!CentreTypeID.Value = 2, "P1", IIF(Fields!CentreTypeID.Value = 1, "C0", "C2"))</Format>
+                                    </Style>
+                                    <Value>=IIF(Fields!CentreTypeID.Value = 2, Fields!Calculation.Value/100,Fields!Calculation.Value)</Value>
+                                    <Visible>true</Visible>
+                                  </DataLabel>
+                                  <Style>
+                                    <BackgroundColor>=IIF(Fields!CentreTypeID.Value = 1, IIF(Fields!Calculation.Value &lt; Fields!Comparison.Value, "OrangeRed", "LimeGreen"), IIF(Fields!Calculation.Value &lt; Fields!Comparison.Value, "LimeGreen", "OrangeRed"))</BackgroundColor>
+                                  </Style>
+                                  <Marker>
+                                    <Type>Square</Type>
+                                    <Size>2pt</Size>
+                                  </Marker>
+                                </DataPoint>
+                              </DataPoints>
+                            </ChartSeries>
+                            <ChartSeries>
+                              <DataPoints>
+                                <DataPoint>
+                                  <DataValues>
+                                    <DataValue>
+                                      <Value>=IIF(Fields!CentreTypeID.Value = 2, Fields!Comparison.Value/100,Fields!Comparison.Value)</Value>
+                                    </DataValue>
+                                  </DataValues>
+                                  <DataLabel>
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>8pt</FontSize>
+                                      <Format>C2</Format>
+                                    </Style>
+                                  </DataLabel>
+                                  <Style>
+                                    <BackgroundColor>=IIF(Parameters!ComparisonType.Value = 2, "Gold", IIF(Parameters!ComparisonType.Value = 3, "Magenta", IIF(Parameters!ComparisonType.Value = 4, "Blue", IIF(Parameters!ComparisonType.Value = 5, "Yellow", "Yellow"))))</BackgroundColor>
+                                  </Style>
+                                  <Marker>
+                                    <Size>6pt</Size>
+                                  </Marker>
+                                </DataPoint>
+                              </DataPoints>
+                            </ChartSeries>
+                          </ChartData>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                          </Style>
+                        </Chart>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>6.65493cm</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox81">
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.84507cm</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Grouping Name="table3_Group3">
+              <Filters>
+                <Filter>
+                  <Operator>NotEqual</Operator>
+                  <FilterValues>
+                    <FilterValue>=1</FilterValue>
+                  </FilterValues>
+                  <FilterExpression>=Fields!CentreTypeID.Value</FilterExpression>
+                </Filter>
+              </Filters>
+              <GroupExpressions>
+                <GroupExpression>=Fields!Level.Value</GroupExpression>
+                <GroupExpression>=Fields!LevelID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+        </TableGroups>
+        <ZIndex>2</ZIndex>
+        <Visibility>
+          <ToggleItem>textbox3</ToggleItem>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <TableColumns>
+          <TableColumn>
+            <Width>18.5cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>7.5cm</Height>
+      </Table>
+      <Table Name="table1">
+        <Left>0.5cm</Left>
+        <DataSetName>KeyImprovementRatio</DataSetName>
+        <Top>5.5cm</Top>
+        <TableGroups>
+          <TableGroup>
+            <Grouping Name="table1_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Fields!DepartmentID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+          <TableGroup>
+            <Grouping Name="table1_Group2">
+              <GroupExpressions>
+                <GroupExpression>=Fields!DepartmentCentreID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Chart Name="chart1">
+                          <Legend>
+                            <Visible>true</Visible>
+                            <Style>
+                              <BorderStyle>
+                                <Default>Solid</Default>
+                              </BorderStyle>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                            <Position>TopLeft</Position>
+                          </Legend>
+                          <Subtype>Plain</Subtype>
+                          <Title>
+                            <Style />
+                          </Title>
+                          <CategoryAxis>
+                            <Axis>
+                              <Title>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </Title>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                              <MajorGridLines>
+                                <Style>
+                                  <BorderStyle>
+                                    <Default>Solid</Default>
+                                  </BorderStyle>
+                                </Style>
+                              </MajorGridLines>
+                              <MinorGridLines>
+                                <Style>
+                                  <BorderStyle>
+                                    <Default>Solid</Default>
+                                  </BorderStyle>
+                                </Style>
+                              </MinorGridLines>
+                              <MajorTickMarks>Outside</MajorTickMarks>
+                              <Min>0</Min>
+                              <Visible>true</Visible>
+                            </Axis>
+                          </CategoryAxis>
+                          <PointWidth>0</PointWidth>
+                          <ThreeDProperties>
+                            <Rotation>30</Rotation>
+                            <Inclination>30</Inclination>
+                            <Shading>Simple</Shading>
+                            <WallThickness>50</WallThickness>
+                          </ThreeDProperties>
+                          <DataSetName>KeyImprovementRatio</DataSetName>
+                          <SeriesGroupings>
+                            <SeriesGrouping>
+                              <StaticSeries>
+                                <StaticMember>
+                                  <Label>=Trim(Fields!LevelName.Value)</Label>
+                                </StaticMember>
+                                <StaticMember>
+                                  <Label>=Code.ComparisonLabel()</Label>
+                                </StaticMember>
+                              </StaticSeries>
+                            </SeriesGrouping>
+                          </SeriesGroupings>
+                          <PlotArea>
+                            <Style>
+                              <BorderStyle>
+                                <Default>Solid</Default>
+                              </BorderStyle>
+                              <BackgroundColor>SkyBlue</BackgroundColor>
+                              <BackgroundGradientType>Center</BackgroundGradientType>
+                            </Style>
+                          </PlotArea>
+                          <ValueAxis>
+                            <Axis>
+                              <Title>
+                                <Caption>= IIF(Fields!CentreTypeID.Value = 1, "Total Sales", "Key Ratio")</Caption>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </Title>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>=IIF(Fields!CentreTypeID.Value = 2, "P1", IIF(Fields!CentreTypeID.Value = 1, "C0", "C2"))</Format>
+                              </Style>
+                              <MajorGridLines>
+                                <ShowGridLines>true</ShowGridLines>
+                                <Style>
+                                  <BorderStyle>
+                                    <Default>Solid</Default>
+                                  </BorderStyle>
+                                </Style>
+                              </MajorGridLines>
+                              <MinorGridLines>
+                                <Style>
+                                  <BorderStyle>
+                                    <Default>Solid</Default>
+                                  </BorderStyle>
+                                </Style>
+                              </MinorGridLines>
+                              <MajorTickMarks>Outside</MajorTickMarks>
+                              <Min>0</Min>
+                              <Margin>true</Margin>
+                              <Visible>true</Visible>
+                              <Scalar>true</Scalar>
+                            </Axis>
+                          </ValueAxis>
+                          <ZIndex>1</ZIndex>
+                          <Type>Bar</Type>
+                          <CategoryGroupings>
+                            <CategoryGrouping>
+                              <DynamicCategories>
+                                <Grouping Name="chart1_CategoryGroup1">
+                                  <GroupExpressions>
+                                    <GroupExpression>=Fields!SiteID.Value</GroupExpression>
+                                  </GroupExpressions>
+                                </Grouping>
+                                <Label>=IIF(Fields!SiteID.Value = 13, "GRMEA", Code.SiteNameById(Fields!SiteID.Value))</Label>
+                              </DynamicCategories>
+                            </CategoryGrouping>
+                          </CategoryGroupings>
+                          <Palette>SemiTransparent</Palette>
+                          <ChartData>
+                            <ChartSeries>
+                              <DataPoints>
+                                <DataPoint>
+                                  <DataValues>
+                                    <DataValue>
+                                      <Value>=IIF(Fields!CentreTypeID.Value = 2, Fields!Calculation.Value/100,Fields!Calculation.Value)</Value>
+                                    </DataValue>
+                                  </DataValues>
+                                  <DataLabel>
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>8pt</FontSize>
+                                      <Format>=IIF(Fields!CentreTypeID.Value = 2, "P1", IIF(Fields!CentreTypeID.Value = 1, "C0", "C2"))</Format>
+                                    </Style>
+                                    <Value>=Fields!Calculation.Value</Value>
+                                    <Visible>true</Visible>
+                                  </DataLabel>
+                                  <Style>
+                                    <BackgroundColor>=IIF(Fields!CentreTypeID.Value = 1, IIF(Fields!Calculation.Value &lt; Fields!Comparison.Value, "OrangeRed", "LimeGreen"), IIF(Fields!Calculation.Value &lt; Fields!Comparison.Value, "LimeGreen", "OrangeRed"))</BackgroundColor>
+                                  </Style>
+                                  <Marker>
+                                    <Type>Square</Type>
+                                    <Size>2pt</Size>
+                                  </Marker>
+                                </DataPoint>
+                              </DataPoints>
+                            </ChartSeries>
+                            <ChartSeries>
+                              <DataPoints>
+                                <DataPoint>
+                                  <DataValues>
+                                    <DataValue>
+                                      <Value>=IIF(Fields!CentreTypeID.Value = 2, Fields!Comparison.Value/100,Fields!Comparison.Value)</Value>
+                                    </DataValue>
+                                  </DataValues>
+                                  <DataLabel>
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>8pt</FontSize>
+                                      <Format>C2</Format>
+                                    </Style>
+                                  </DataLabel>
+                                  <Style>
+                                    <BackgroundColor>=IIF(Parameters!ComparisonType.Value = 2, "Gold", IIF(Parameters!ComparisonType.Value = 3, "Magenta", IIF(Parameters!ComparisonType.Value = 4, "Blue", IIF(Parameters!ComparisonType.Value = 5, "Yellow", "Yellow"))))</BackgroundColor>
+                                  </Style>
+                                  <Marker>
+                                    <Size>6pt</Size>
+                                  </Marker>
+                                </DataPoint>
+                              </DataPoints>
+                            </ChartSeries>
+                          </ChartData>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                          </Style>
+                        </Chart>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>6.65493cm</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox80">
+                          <rd:DefaultName>textbox80</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.84507cm</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Grouping Name="table1_Group3">
+              <Filters>
+                <Filter>
+                  <Operator>Equal</Operator>
+                  <FilterValues>
+                    <FilterValue>=1</FilterValue>
+                  </FilterValues>
+                  <FilterExpression>=Fields!CentreTypeID.Value</FilterExpression>
+                </Filter>
+              </Filters>
+              <GroupExpressions>
+                <GroupExpression>=Fields!Level.Value</GroupExpression>
+                <GroupExpression>=Fields!LevelID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+        </TableGroups>
+        <ZIndex>1</ZIndex>
+        <Visibility>
+          <ToggleItem>textbox3</ToggleItem>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Width>18.5cm</Width>
+        <TableColumns>
+          <TableColumn>
+            <Width>18.5cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>7.5cm</Height>
+      </Table>
+      <Table Name="table2">
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <ZIndex>18</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <ZIndex>17</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <ZIndex>16</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox12">
+                      <rd:DefaultName>textbox12</rd:DefaultName>
+                      <ZIndex>14</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox20">
+                      <rd:DefaultName>textbox20</rd:DefaultName>
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox23">
+                      <rd:DefaultName>textbox23</rd:DefaultName>
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox25">
+                      <rd:DefaultName>textbox25</rd:DefaultName>
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox26">
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox31">
+                      <rd:DefaultName>textbox31</rd:DefaultName>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox33">
+                      <rd:DefaultName>textbox33</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox34">
+                      <rd:DefaultName>textbox34</rd:DefaultName>
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox37">
+                      <rd:DefaultName>textbox37</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox39">
+                      <rd:DefaultName>textbox39</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox40">
+                      <rd:DefaultName>textbox40</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox49">
+                      <rd:DefaultName>textbox49</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox57">
+                      <rd:DefaultName>textbox57</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox63">
+                      <rd:DefaultName>textbox63</rd:DefaultName>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.64286cm</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+        <Left>0.47884cm</Left>
+        <DataSetName>KeyRatio</DataSetName>
+        <Top>0.25cm</Top>
+        <TableGroups>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>3</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="Department">
+                          <ToolTip>=First(Fields!LevelName.Value) &amp; ", Level ID: " &amp; First(Fields!LevelID.Value)</ToolTip>
+                          <rd:DefaultName>Department</rd:DefaultName>
+                          <ZIndex>71</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=First(Fields!Department.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox83">
+                          <rd:DefaultName>textbox83</rd:DefaultName>
+                          <ZIndex>70</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox84">
+                          <rd:DefaultName>textbox84</rd:DefaultName>
+                          <ZIndex>69</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox85">
+                          <rd:DefaultName>textbox85</rd:DefaultName>
+                          <ZIndex>68</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox86">
+                          <rd:DefaultName>textbox86</rd:DefaultName>
+                          <ZIndex>67</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox87">
+                          <rd:DefaultName>textbox87</rd:DefaultName>
+                          <ZIndex>66</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox88">
+                          <rd:DefaultName>textbox88</rd:DefaultName>
+                          <ZIndex>65</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox89">
+                          <rd:DefaultName>textbox89</rd:DefaultName>
+                          <ZIndex>64</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox90">
+                          <rd:DefaultName>textbox90</rd:DefaultName>
+                          <ZIndex>63</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox91">
+                          <rd:DefaultName>textbox91</rd:DefaultName>
+                          <ZIndex>62</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox92">
+                          <rd:DefaultName>textbox92</rd:DefaultName>
+                          <ZIndex>61</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox93">
+                          <rd:DefaultName>textbox93</rd:DefaultName>
+                          <ZIndex>60</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox94">
+                          <rd:DefaultName>textbox94</rd:DefaultName>
+                          <ZIndex>59</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox95">
+                          <rd:DefaultName>textbox95</rd:DefaultName>
+                          <ZIndex>58</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox96">
+                          <rd:DefaultName>textbox96</rd:DefaultName>
+                          <ZIndex>57</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox97">
+                          <rd:DefaultName>textbox97</rd:DefaultName>
+                          <ZIndex>56</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox98">
+                          <rd:DefaultName>textbox98</rd:DefaultName>
+                          <ZIndex>55</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>SteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.64286cm</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Grouping Name="table2_Group2">
+              <GroupExpressions>
+                <GroupExpression>=Fields!DepartmentID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>3</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="DepartmentCentre">
+                          <ToolTip>=First(Fields!LevelName.Value) &amp; ", Level ID: " &amp; First(Fields!LevelID.Value)</ToolTip>
+                          <rd:DefaultName>DepartmentCentre</rd:DefaultName>
+                          <ZIndex>54</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=First(Fields!DepartmentCentre.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox102">
+                          <rd:DefaultName>textbox102</rd:DefaultName>
+                          <ZIndex>53</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox103">
+                          <rd:DefaultName>textbox103</rd:DefaultName>
+                          <ZIndex>52</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox104">
+                          <rd:DefaultName>textbox104</rd:DefaultName>
+                          <ZIndex>51</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox105">
+                          <rd:DefaultName>textbox105</rd:DefaultName>
+                          <ZIndex>50</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox106">
+                          <rd:DefaultName>textbox106</rd:DefaultName>
+                          <ZIndex>49</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox107">
+                          <rd:DefaultName>textbox107</rd:DefaultName>
+                          <ZIndex>48</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox108">
+                          <rd:DefaultName>textbox108</rd:DefaultName>
+                          <ZIndex>47</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox109">
+                          <rd:DefaultName>textbox109</rd:DefaultName>
+                          <ZIndex>46</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox110">
+                          <rd:DefaultName>textbox110</rd:DefaultName>
+                          <ZIndex>45</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox111">
+                          <rd:DefaultName>textbox111</rd:DefaultName>
+                          <ZIndex>44</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox112">
+                          <rd:DefaultName>textbox112</rd:DefaultName>
+                          <ZIndex>43</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox113">
+                          <rd:DefaultName>textbox113</rd:DefaultName>
+                          <ZIndex>42</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox114">
+                          <rd:DefaultName>textbox114</rd:DefaultName>
+                          <ZIndex>41</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox115">
+                          <rd:DefaultName>textbox115</rd:DefaultName>
+                          <ZIndex>40</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox116">
+                          <rd:DefaultName>textbox116</rd:DefaultName>
+                          <ZIndex>39</ZIndex>
+                          <Style>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox117">
+                          <rd:DefaultName>textbox117</rd:DefaultName>
+                          <ZIndex>38</ZIndex>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>8pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>700</FontWeight>
+                            <FontSize>9pt</FontSize>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <Color>White</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.64286cm</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Grouping Name="table2_Group3">
+              <GroupExpressions>
+                <GroupExpression>=Fields!DepartmentCentreID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="LevelName_1">
+                          <ToolTip>=First(Fields!LevelName.Value) &amp; " (" &amp; First(Fields!CentreType.Value) &amp; "), Level ID: " &amp; First(Fields!LevelID.Value)</ToolTip>
+                          <rd:DefaultName>LevelName_1</rd:DefaultName>
+                          <ZIndex>37</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Value>=Code.LevelName(First(Fields!Level.Value), First(Fields!LevelName.Value))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox14">
+                          <ToolTip>=Min(Code.SiteInfo(0, Fields!SiteID.Value, Code.ToolTip(Fields!Total.Value, Fields!Quantity.Value, Fields!SiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox14</rd:DefaultName>
+                          <ZIndex>36</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                              <Left>Solid</Left>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(0, Fields!SiteID.Value, Code.Item(Fields!Total.Value, Fields!Quantity.Value, Fields!Calculation.Value, Fields!SiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox17">
+                          <ToolTip>=Min(Code.SiteInfo(0, Fields!SiteID.Value, Code.ToolTip(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!ComparisonSiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox17</rd:DefaultName>
+                          <ZIndex>35</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(0, Fields!SiteID.Value, Code.Item(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!Comparison.Value, Fields!ComparisonSiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox18">
+                          <ToolTip>=Min(Code.SiteInfo(0, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value,Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</ToolTip>
+                          <rd:DefaultName>textbox18</rd:DefaultName>
+                          <ZIndex>34</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>Green</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(0, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value,Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox19">
+                          <ToolTip>=Min(Code.SiteInfo(1, Fields!SiteID.Value, Code.ToolTip(Fields!Total.Value, Fields!Quantity.Value, Fields!SiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox19</rd:DefaultName>
+                          <ZIndex>33</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                              <Left>Solid</Left>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(1, Fields!SiteID.Value, Code.Item(Fields!Total.Value, Fields!Quantity.Value, Fields!Calculation.Value, Fields!SiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox32">
+                          <ToolTip>=Min(Code.SiteInfo(1, Fields!SiteID.Value, Code.ToolTip(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!ComparisonSiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox32</rd:DefaultName>
+                          <ZIndex>32</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(1, Fields!SiteID.Value, Code.Item(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!Comparison.Value, Fields!ComparisonSiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox38">
+                          <ToolTip>=Min(Code.SiteInfo(1, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value, Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</ToolTip>
+                          <rd:DefaultName>textbox38</rd:DefaultName>
+                          <ZIndex>31</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>Green</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(1, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value,Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox24">
+                          <ToolTip>=Min(Code.SiteInfo(2, Fields!SiteID.Value, Code.ToolTip(Fields!Total.Value, Fields!Quantity.Value, Fields!SiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox24</rd:DefaultName>
+                          <ZIndex>30</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                              <Left>Solid</Left>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(2, Fields!SiteID.Value, Code.Item(Fields!Total.Value, Fields!Quantity.Value, Fields!Calculation.Value, Fields!SiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox43">
+                          <ToolTip>=Min(Code.SiteInfo(2, Fields!SiteID.Value, Code.ToolTip(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!ComparisonSiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox43</rd:DefaultName>
+                          <ZIndex>29</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(2, Fields!SiteID.Value, Code.Item(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!Comparison.Value, Fields!ComparisonSiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox48">
+                          <ToolTip>=Min(Code.SiteInfo(2, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value, Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</ToolTip>
+                          <rd:DefaultName>textbox48</rd:DefaultName>
+                          <ZIndex>28</ZIndex>
+                          <Visibility>
+                            <ToggleItem>textbox36</ToggleItem>
+                            <Hidden>true</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>Green</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(2, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value,Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox44">
+                          <ToolTip>=Min(Code.SiteInfo(3, Fields!SiteID.Value, Code.ToolTip(Fields!Total.Value, Fields!Quantity.Value, Fields!SiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox44</rd:DefaultName>
+                          <ZIndex>27</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                              <Left>Solid</Left>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(3, Fields!SiteID.Value, Code.Item(Fields!Total.Value, Fields!Quantity.Value, Fields!Calculation.Value, Fields!SiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox55">
+                          <ToolTip>=Min(Code.SiteInfo(3, Fields!SiteID.Value, Code.ToolTip(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!ComparisonSiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox55</rd:DefaultName>
+                          <ZIndex>26</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(3, Fields!SiteID.Value, Code.Item(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!Comparison.Value, Fields!ComparisonSiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox59">
+                          <ToolTip>=Min(Code.SiteInfo(3, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value, Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</ToolTip>
+                          <rd:DefaultName>textbox59</rd:DefaultName>
+                          <ZIndex>25</ZIndex>
+                          <Visibility>
+                            <ToggleItem>textbox36</ToggleItem>
+                            <Hidden>true</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>Green</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(3, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value,Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox29">
+                          <ToolTip>=Min(Code.SiteInfo(4, Fields!SiteID.Value, Code.ToolTip(Fields!Total.Value, Fields!Quantity.Value, Fields!SiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox29</rd:DefaultName>
+                          <ZIndex>24</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                              <Left>Solid</Left>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(4, Fields!SiteID.Value, Code.Item(Fields!Total.Value, Fields!Quantity.Value, Fields!Calculation.Value, Fields!SiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox56">
+                          <ToolTip>=Min(Code.SiteInfo(4, Fields!SiteID.Value, Code.ToolTip(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!ComparisonSiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox56</rd:DefaultName>
+                          <ZIndex>23</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(4, Fields!SiteID.Value, Code.Item(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!Comparison.Value, Fields!ComparisonSiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox61">
+                          <ToolTip>=Min(Code.SiteInfo(4, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value, Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</ToolTip>
+                          <rd:DefaultName>textbox61</rd:DefaultName>
+                          <ZIndex>22</ZIndex>
+                          <Visibility>
+                            <ToggleItem>textbox36</ToggleItem>
+                            <Hidden>true</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>Green</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(4, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value, Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox46">
+                          <ToolTip>=Min(Code.SiteInfo(5, Fields!SiteID.Value, Code.ToolTip(Fields!Total.Value, Fields!Quantity.Value, Fields!SiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox46</rd:DefaultName>
+                          <ZIndex>21</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                              <Left>Solid</Left>
+                            </BorderStyle>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(5, Fields!SiteID.Value, Code.Item(Fields!Total.Value, Fields!Quantity.Value, Fields!Calculation.Value, Fields!SiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox54">
+                          <ToolTip>=Min(Code.SiteInfo(5, Fields!SiteID.Value, Code.ToolTip(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!ComparisonSiteAvailability.Value, Fields!AccountCode.Value, Fields!KPI.Value)))</ToolTip>
+                          <rd:DefaultName>textbox54</rd:DefaultName>
+                          <ZIndex>20</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>=Min(Code.RowColour(Fields!CentreTypeID.Value, Fields!AccountCode.Value))</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(5, Fields!SiteID.Value, Code.Item(Fields!ComparisonTotal.Value, Fields!ComparisonQuantity.Value, Fields!Comparison.Value, Fields!ComparisonSiteAvailability.Value, Fields!CentreTypeID.Value, Fields!AccountCode.Value, Fields!KPITypeID.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox62">
+                          <ToolTip>=Min(Code.SiteInfo(5, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value, Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</ToolTip>
+                          <rd:DefaultName>textbox62</rd:DefaultName>
+                          <ZIndex>19</ZIndex>
+                          <Visibility>
+                            <ToggleItem>textbox36</ToggleItem>
+                            <Hidden>true</Hidden>
+                          </Visibility>
+                          <Style>
+                            <BorderStyle>
+                              <Bottom>Solid</Bottom>
+                              <Top>Solid</Top>
+                            </BorderStyle>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingLeft>14pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontFamily>Tahoma</FontFamily>
+                            <FontWeight>=Code.LevelFont(Fields!Level.Value, Fields!CentreTypeID.Value)</FontWeight>
+                            <FontSize>7pt</FontSize>
+                            <BorderColor>
+                              <Default>LightGrey</Default>
+                            </BorderColor>
+                            <BackgroundColor>=Code.LevelColour(Fields!Level.Value)</BackgroundColor>
+                            <Color>Green</Color>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Min(Code.SiteInfo(5, Fields!SiteID.Value, Code.FactorInfo(Fields!CentreTypeID.Value,Fields!KPITypeID.Value, Fields!Factor2.Value, Fields!Factor3.Value)))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.45cm</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Sorting>
+              <SortBy>
+                <SortExpression>=Fields!DepartmentDisplayIndex.Value</SortExpression>
+                <Direction>Ascending</Direction>
+              </SortBy>
+              <SortBy>
+                <SortExpression>=Fields!RosterCentreDisplayIndex.Value</SortExpression>
+                <Direction>Ascending</Direction>
+              </SortBy>
+              <SortBy>
+                <SortExpression>=Fields!CentreDisplayIndex.Value</SortExpression>
+                <Direction>Ascending</Direction>
+              </SortBy>
+              <SortBy>
+                <SortExpression>=Fields!SubCentreDisplayIndex.Value</SortExpression>
+                <Direction>Ascending</Direction>
+              </SortBy>
+            </Sorting>
+            <Grouping Name="table2_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Fields!Level.Value</GroupExpression>
+                <GroupExpression>=Fields!LevelID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+        </TableGroups>
+        <Width>37.5cm</Width>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <ZIndex>110</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox15">
+                      <ZIndex>109</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.SiteName(0)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <ZIndex>108</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.SiteName(1)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox13">
+                      <rd:DefaultName>textbox13</rd:DefaultName>
+                      <ZIndex>107</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.SiteName(2)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox27">
+                      <rd:DefaultName>textbox27</rd:DefaultName>
+                      <ZIndex>106</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.SiteName(3)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <ZIndex>105</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.SiteName(4)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox42">
+                      <rd:DefaultName>textbox42</rd:DefaultName>
+                      <ZIndex>104</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.SiteName(5)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.64286cm</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox36">
+                      <rd:DefaultName>textbox36</rd:DefaultName>
+                      <ZIndex>103</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox47">
+                      <ZIndex>102</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Parameters!CalculationType.Label</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox41">
+                      <ZIndex>101</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.ComparisonLabel()</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <ZIndex>100</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Parameters!CalculationType.Label</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox30">
+                      <rd:DefaultName>textbox30</rd:DefaultName>
+                      <ZIndex>99</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.ComparisonLabel()</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox22">
+                      <rd:DefaultName>textbox22</rd:DefaultName>
+                      <ZIndex>98</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Parameters!CalculationType.Label</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox35">
+                      <rd:DefaultName>textbox35</rd:DefaultName>
+                      <ZIndex>97</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.ComparisonLabel()</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox28">
+                      <rd:DefaultName>textbox28</rd:DefaultName>
+                      <ZIndex>96</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Parameters!CalculationType.Label</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox53">
+                      <rd:DefaultName>textbox53</rd:DefaultName>
+                      <ZIndex>95</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.ComparisonLabel()</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox21">
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <ZIndex>94</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Parameters!CalculationType.Label</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox50">
+                      <rd:DefaultName>textbox50</rd:DefaultName>
+                      <ZIndex>93</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.ComparisonLabel()</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox45">
+                      <rd:DefaultName>textbox45</rd:DefaultName>
+                      <ZIndex>92</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Parameters!CalculationType.Label</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox52">
+                      <rd:DefaultName>textbox52</rd:DefaultName>
+                      <ZIndex>91</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>9pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.ComparisonLabel()</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.64286cm</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox51">
+                      <rd:DefaultName>textbox51</rd:DefaultName>
+                      <ZIndex>90</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox58">
+                      <rd:DefaultName>textbox58</rd:DefaultName>
+                      <ZIndex>89</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox60">
+                      <rd:DefaultName>textbox60</rd:DefaultName>
+                      <ZIndex>88</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox64">
+                      <rd:DefaultName>textbox64</rd:DefaultName>
+                      <ZIndex>87</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox65">
+                      <rd:DefaultName>textbox65</rd:DefaultName>
+                      <ZIndex>86</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox66">
+                      <rd:DefaultName>textbox66</rd:DefaultName>
+                      <ZIndex>85</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox67">
+                      <rd:DefaultName>textbox67</rd:DefaultName>
+                      <ZIndex>84</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox68">
+                      <rd:DefaultName>textbox68</rd:DefaultName>
+                      <ZIndex>83</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox69">
+                      <rd:DefaultName>textbox69</rd:DefaultName>
+                      <ZIndex>82</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox70">
+                      <rd:DefaultName>textbox70</rd:DefaultName>
+                      <ZIndex>81</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox71">
+                      <rd:DefaultName>textbox71</rd:DefaultName>
+                      <ZIndex>80</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox72">
+                      <rd:DefaultName>textbox72</rd:DefaultName>
+                      <ZIndex>79</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox73">
+                      <rd:DefaultName>textbox73</rd:DefaultName>
+                      <ZIndex>78</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox74">
+                      <rd:DefaultName>textbox74</rd:DefaultName>
+                      <ZIndex>77</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox75">
+                      <rd:DefaultName>textbox75</rd:DefaultName>
+                      <ZIndex>76</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox76">
+                      <rd:DefaultName>textbox76</rd:DefaultName>
+                      <ZIndex>75</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox77">
+                      <rd:DefaultName>textbox77</rd:DefaultName>
+                      <ZIndex>74</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox78">
+                      <rd:DefaultName>textbox78</rd:DefaultName>
+                      <ZIndex>73</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox79">
+                      <rd:DefaultName>textbox79</rd:DefaultName>
+                      <ZIndex>72</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <Color>White</Color>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.64286cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>4.5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5cm</Width>
+            <Visibility>
+              <ToggleItem>textbox36</ToggleItem>
+              <Hidden>true</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(1)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(1)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5cm</Width>
+            <Visibility>
+              <ToggleItem>textbox36</ToggleItem>
+              <Hidden>true</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(2)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(2)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5cm</Width>
+            <Visibility>
+              <ToggleItem>textbox36</ToggleItem>
+              <Hidden>=Code.IsColumnHiddenToo(2, false)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(3)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(3)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5cm</Width>
+            <Visibility>
+              <ToggleItem>textbox36</ToggleItem>
+              <Hidden>=Code.IsColumnHiddenToo(3, false)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(4)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(4)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5cm</Width>
+            <Visibility>
+              <ToggleItem>textbox36</ToggleItem>
+              <Hidden>=Code.IsColumnHiddenToo(4, false)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(5)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5cm</Width>
+            <Visibility>
+              <Hidden>=Code.IsColumnHidden(5)</Hidden>
+            </Visibility>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5cm</Width>
+            <Visibility>
+              <ToggleItem>textbox36</ToggleItem>
+              <Hidden>=Code.IsColumnHiddenToo(5, false)</Hidden>
+            </Visibility>
+          </TableColumn>
+        </TableColumns>
+        <Height>4.30716cm</Height>
+      </Table>
+    </ReportItems>
+    <Height>25cm</Height>
+    <Style>
+      <BorderStyle>
+        <Default>Solid</Default>
+      </BorderStyle>
+      <BorderColor>
+        <Default>White</Default>
+      </BorderColor>
+    </Style>
+  </Body>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Left>0.5cm</Left>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <FontSize>12pt</FontSize>
+          <Color>SteelBlue</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <Value>="Key Ratio Report: " &amp; FormatDateTime(Parameters!StartDate.Value, 1) &amp; " to " &amp; FormatDateTime(Parameters!EndDate.Value, 1)</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.91429cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+  </PageHeader>
+  <rd:ReportID>d9adb984-56f0-48c8-89db-060b582079ca</rd:ReportID>
+  <LeftMargin>0.1cm</LeftMargin>
+  <DataSets>
+    <DataSet Name="ListSite">
+      <Query>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>procReportListSite</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@OrganisationID">
+            <Value>=Parameters!OrganisationID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShowLegacy">
+            <Value>False</Value>
+          </QueryParameter>
+          <QueryParameter Name="@UserSiteID">
+            <Value>=Parameters!UserSiteID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ListSites">
+            <Value>=Parameters!ListSites.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShowAllOption">
+            <Value>False</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TimeClock</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="SiteID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SiteID</DataField>
+        </Field>
+        <Field Name="Name">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Name</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="KeyRatio">
+      <Query>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>procReportConsolidatedKeyRatio</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@SiteIDs">
+            <Value>=Parameters!SiteIDs.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CalculationType">
+            <Value>=Parameters!CalculationType.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ComparisonType">
+            <Value>=Parameters!ComparisonType.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TimeClock</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="SiteID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SiteID</DataField>
+        </Field>
+        <Field Name="DepartmentID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DepartmentID</DataField>
+        </Field>
+        <Field Name="Department">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Department</DataField>
+        </Field>
+        <Field Name="DepartmentCentreID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DepartmentCentreID</DataField>
+        </Field>
+        <Field Name="DepartmentCentre">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DepartmentCentre</DataField>
+        </Field>
+        <Field Name="CentreID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CentreID</DataField>
+        </Field>
+        <Field Name="Centre">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Centre</DataField>
+        </Field>
+        <Field Name="SubCentreID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SubCentreID</DataField>
+        </Field>
+        <Field Name="SubCentre">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SubCentre</DataField>
+        </Field>
+        <Field Name="AccountCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>AccountCode</DataField>
+        </Field>
+        <Field Name="Level">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Level</DataField>
+        </Field>
+        <Field Name="LevelID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>LevelID</DataField>
+        </Field>
+        <Field Name="LevelName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LevelName</DataField>
+        </Field>
+        <Field Name="CentreType">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CentreType</DataField>
+        </Field>
+        <Field Name="CentreTypeID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CentreTypeID</DataField>
+        </Field>
+        <Field Name="KPI">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>KPI</DataField>
+        </Field>
+        <Field Name="Factor">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Factor</DataField>
+        </Field>
+        <Field Name="Factor2">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Factor2</DataField>
+        </Field>
+        <Field Name="Factor3">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Factor3</DataField>
+        </Field>
+        <Field Name="KPITypeID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>KPITypeID</DataField>
+        </Field>
+        <Field Name="KPIType">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>KPIType</DataField>
+        </Field>
+        <Field Name="Calculation">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Calculation</DataField>
+        </Field>
+        <Field Name="Comparison">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Comparison</DataField>
+        </Field>
+        <Field Name="Total">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Total</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="ComparisonTotal">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ComparisonTotal</DataField>
+        </Field>
+        <Field Name="ComparisonQuantity">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ComparisonQuantity</DataField>
+        </Field>
+        <Field Name="SiteAvailability">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SiteAvailability</DataField>
+        </Field>
+        <Field Name="ComparisonSiteAvailability">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ComparisonSiteAvailability</DataField>
+        </Field>
+        <Field Name="DepartmentDisplayIndex">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DepartmentDisplayIndex</DataField>
+        </Field>
+        <Field Name="RosterCentreDisplayIndex">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>RosterCentreDisplayIndex</DataField>
+        </Field>
+        <Field Name="CentreDisplayIndex">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CentreDisplayIndex</DataField>
+        </Field>
+        <Field Name="SubCentreDisplayIndex">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SubCentreDisplayIndex</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="KeyImprovementRatio">
+      <Query>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>procReportKeyImprovementRatio</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@SiteIDs">
+            <Value>=Parameters!SiteIDs.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CalculationType">
+            <Value>=Parameters!CalculationType.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ComparisonType">
+            <Value>=Parameters!ComparisonType.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>TimeClock</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="SiteID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SiteID</DataField>
+        </Field>
+        <Field Name="DepartmentID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DepartmentID</DataField>
+        </Field>
+        <Field Name="Department">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Department</DataField>
+        </Field>
+        <Field Name="DepartmentCentreID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DepartmentCentreID</DataField>
+        </Field>
+        <Field Name="DepartmentCentre">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DepartmentCentre</DataField>
+        </Field>
+        <Field Name="CentreID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CentreID</DataField>
+        </Field>
+        <Field Name="Centre">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Centre</DataField>
+        </Field>
+        <Field Name="SubCentreID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SubCentreID</DataField>
+        </Field>
+        <Field Name="SubCentre">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SubCentre</DataField>
+        </Field>
+        <Field Name="AccountCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>AccountCode</DataField>
+        </Field>
+        <Field Name="Level">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Level</DataField>
+        </Field>
+        <Field Name="LevelID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>LevelID</DataField>
+        </Field>
+        <Field Name="LevelName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LevelName</DataField>
+        </Field>
+        <Field Name="CentreType">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CentreType</DataField>
+        </Field>
+        <Field Name="CentreTypeID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CentreTypeID</DataField>
+        </Field>
+        <Field Name="KPI">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>KPI</DataField>
+        </Field>
+        <Field Name="Factor">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Factor</DataField>
+        </Field>
+        <Field Name="Factor2">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Factor2</DataField>
+        </Field>
+        <Field Name="Factor3">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Factor3</DataField>
+        </Field>
+        <Field Name="KPITypeID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>KPITypeID</DataField>
+        </Field>
+        <Field Name="KPIType">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>KPIType</DataField>
+        </Field>
+        <Field Name="Calculation">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Calculation</DataField>
+        </Field>
+        <Field Name="Comparison">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Comparison</DataField>
+        </Field>
+        <Field Name="Total">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Total</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="ComparisonTotal">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ComparisonTotal</DataField>
+        </Field>
+        <Field Name="ComparisonQuantity">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ComparisonQuantity</DataField>
+        </Field>
+        <Field Name="SiteAvailability">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SiteAvailability</DataField>
+        </Field>
+        <Field Name="ComparisonSiteAvailability">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ComparisonSiteAvailability</DataField>
+        </Field>
+        <Field Name="DepartmentDisplayIndex">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DepartmentDisplayIndex</DataField>
+        </Field>
+        <Field Name="RosterCentreDisplayIndex">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>RosterCentreDisplayIndex</DataField>
+        </Field>
+        <Field Name="CentreDisplayIndex">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CentreDisplayIndex</DataField>
+        </Field>
+        <Field Name="SubCentreDisplayIndex">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SubCentreDisplayIndex</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code>Public Const SalesCentreType As String = "1"
+Public Const Accomodation As String = "41010"
+
+Function ComparisonLabel() As String
+   Return Report.Parameters!ComparisonType.Label &amp; IIf(Report.Parameters!ComparisonType.Value &gt; 4, " (Budget)", "")
+End Function
+
+Function LevelType(ByVal level As Integer) As String
+    Select Case level
+      Case 1
+        Return "Department"
+      Case 2
+        Return "Roster Centre"
+      Case 3
+        Return "Centre"
+      Case 4
+        Return "Sub Centre"
+      Case Else
+        Return ""
+    End Select
+End Function
+
+' % Factors need to be divided by 100 to display correctly.
+Function FormatPercentage(ByVal factor As Decimal, ByVal kPITypeId As Integer) As Decimal
+    Select Case kPITypeId
+      Case 1, 6, 7, 8
+        Return factor/100
+      Case Else
+        Return factor
+    End Select
+End Function
+
+Function FactorInfo(ByVal centreTypeId As Integer, ByVal kPITypeId As Integer, ByVal factor2 As Decimal, ByVal factor3 As Decimal) As String
+    If (centreTypeId = SalesCentreType) Then
+      Return ""
+    Else
+      Select Case kPITypeId
+        Case 1
+          Return "of sales"
+        Case 2
+         Return "per room"
+        Case 3
+          Return "daily"
+        Case 6
+          Return "of site"
+        Case 7
+          Return "of House Profit"
+        Case 8
+          Return "% of GOP"
+        Case 9
+          Return  " + " &amp; FormatCurrency(factor2)
+        Case 10
+          Return "@ " &amp; FormatCurrency(factor3) &amp; " + " &amp; FormatCurrency(factor2)
+        Case Else
+          Return ""
+      End Select
+  End If
+End Function
+
+Function LevelColour(ByVal level As Integer) As String
+    Select Case level
+      Case 1
+        Return "SteelBlue"
+      Case 2
+        Return "LightSteelBlue"
+      Case 3
+        Return "White"
+      Case 4
+        Return "White"
+      Case Else
+        Return ""
+    End Select
+End Function
+
+Function LevelFont(ByVal level As Integer, ByVal centreTypeID As Integer) As String
+    Select Case level
+      Case 1
+        Return "Bold"
+      Case 2
+        Return "Bold"
+      Case 3
+        If (centreTypeId = SalesCentreType) Then
+          Return "Bold"
+       Else 
+          Return "Normal"
+       End If
+      Case 4
+        If (centreTypeId = SalesCentreType) Then
+          Return "Bold"
+       Else 
+          Return "Normal"
+       End If
+      Case Else
+        Return "Bold"
+    End Select
+
+End Function
+
+Function IsColumnHidden(ByVal index As Integer) As Boolean
+    Return (index &gt;= Report.Parameters!SiteIDs.Count)
+End Function
+
+Function IsColumnHiddenToo(ByVal index As Integer, ByVal ToggleState As Boolean) As Boolean
+    Return ((index &gt;= Report.Parameters!SiteIDs.Count) OR (ToggleState = False))
+End Function
+
+Function SiteName(ByVal index As Integer) As String
+    Dim str As String = ""
+    If (index &lt; Report.Parameters!SiteIDs.Count)
+        str = Report.Parameters!SiteIDs.Label(index)
+    End If
+    Return str
+End Function
+
+Function SiteNameById(ByVal siteId As Integer) As String
+    Dim str As String = ""
+    Dim index As Integer = 0
+    For i As Integer = 0 to Report.Parameters!SiteIDs.Count - 1
+        If (Report.Parameters!SiteIDs.Value(i) = siteId) Then
+            str = Report.Parameters!SiteIDs.Label(i)
+            Exit For
+        End If
+    Next i
+    Return str
+End Function
+
+Function IsSiteRow(ByVal index As Integer, ByVal siteId As Integer) As Boolean
+    Dim valid As Boolean = False
+    If (index &lt; Report.Parameters!SiteIDs.Count)
+        valid = (Report.Parameters!SiteIDs.Value(index) = siteId)
+    End If
+    Return valid
+End Function
+
+Function SiteInfo(ByVal index As Integer, ByVal siteId As Integer, ByVal info As Object) As Object
+' If the row belongs to the Site with the same SiteID 
+' as index position in SiteIDs parameter,
+' return the info for the site, else return Nothing.
+' This filters the rows to only the data for the required SiteID.
+    Return IIf(IsSiteRow(index, siteId), info, Nothing)
+End Function
+
+Function Fraction(ByVal numerator As Double, ByVal denominator As Double) As Double
+    Return (numerator/denominator)
+End Function
+
+Function OrigItem(ByVal total As Double, ByVal quantity As Double, ByVal val As Double, ByVal availability As Integer, ByVal centreTypeId As Integer, ByVal accountCode As String, ByVal kPITypeId As Integer) As String
+    Dim str As String = ""
+    If (Report.Parameters!DisplayType.Value = 1) Then
+        ' Sales CentreType displays Total, Non-Sales CentreType displays Estimated Spend
+         str = FormatCurrency(IIf(centreTypeId = SalesCentreType, total, Fraction(total, quantity)), 2)
+    Else
+        ' Sales CentreType displays Quantity @ E.S., Non-Sales CentreType displays Factor
+        If (centreTypeId = SalesCentreType) Then
+            ' Accomodation displays Occupancy @ Estimated Spend,
+            ' Other Sales show quantity @ Estimated Spend
+            str = IIf(Trim(accountCode) = Accomodation, FormatPercent(Fraction(quantity, availability), 1), FormatNumber(quantity, 0)) &amp; " @ " &amp; FormatCurrency(Fraction(total, quantity), 2)
+        Else
+            Select Case kPITypeId
+              Case 1, 6, 7, 8
+                str = FormatPercent(val/100, 2)
+              Case Else
+                str = FormatCurrency(val, 2)
+            End Select
+        End If
+    End If
+    Return str
+End Function
+
+Function Item(ByVal total As Double, ByVal quantity As Double, ByVal val As Double, ByVal availability As Integer, ByVal centreTypeId As Integer, ByVal accountCode As String, ByVal kPITypeId As Integer) As String
+    Dim str As String = ""
+    ' Sales CentreType displays Quantity @ E.S.
+    If (centreTypeId = SalesCentreType) Then
+        ' Accomodation displays Occupancy @ Estimated Spend,
+        ' Other Sales show quantity @ Estimated Spend
+        str = IIf(Trim(accountCode) = Accomodation, FormatPercent(Fraction(quantity, availability), 1), FormatNumber(quantity, 0)) &amp; " @ " &amp; FormatCurrency(Fraction(total, quantity), 2)
+    ' Non-Sales CentreType displays Factor or E.S
+    Else
+        Select Case kPITypeId
+          Case 1, 6, 7, 8
+            str = FormatPercent(val/100, 2)
+          Case Else
+              If (Report.Parameters!DisplayType.Value = 1) Then
+                  str = FormatCurrency(val, 2)
+              Else
+                  str = FormatCurrency(Fraction(total, quantity), 2)
+              End If
+        End Select
+    End If
+    Return str
+End Function
+
+Function RowColour(ByVal centreTypeId As Integer, ByVal accountCode As String) As String
+    Dim str As String = ""
+    Select Case AccountType(centreTypeId, accountCode)
+      Case 2
+        str = "DarkOrange"
+      Case 1
+        str = "DarkOrange"
+      Case 0
+        str = "Black"
+    End Select
+    Return str
+End Function
+
+Function ToolTip(ByVal total As Double, ByVal quantity As Double, ByVal availability As Integer, ByVal accountCode As String, ByVal kpi As String) As String
+    Dim str As String = ""
+    str = "Total: " &amp; FormatCurrency(total, 2) &amp; " Qty: " &amp; FormatNumber(quantity, 0)
+    If (Trim(accountCode) = Accomodation) Then
+        str = str &amp;" Occupancy: " &amp; FormatPercent(Fraction(quantity, availability), 1)
+    Else
+        str = str &amp; " KPI: " &amp; kpi
+    End If
+    Return str
+End Function
+
+' Returns Integer identifying Row's account Type
+' 2 = Accomodation (Sales CentreType)
+' 1 Sales CentreType
+' 0 Other
+Function AccountType(ByVal centreTypeId As Integer, ByVal accountCode As String) As Integer
+    If (centreTypeId = SalesCentreType) Then
+        Return IIf(Trim(accountCode) = Accomodation, 2, 1)
+    Else
+        Return 0
+    End If
+End Function
+
+Function LevelName(ByVal Level As Integer, ByVal Name As String) As String
+    Return IIf(Level &gt; 2, Name, Nothing)
+End Function</Code>
+  <Width>38cm</Width>
+  <InteractiveHeight>20cm</InteractiveHeight>
+  <Language>=Parameters!CultureInfo.Value</Language>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="textbox9">
+        <Left>19.75cm</Left>
+        <ZIndex>1</ZIndex>
+        <Width>8.5cm</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>7pt</FontSize>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <Left>0.5cm</Left>
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <Width>6.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>7pt</FontSize>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>="Report generated on " &amp; format(Globals!ExecutionTime,"dd/MM/yyyy HH:mm:ss")</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.75cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+  </PageFooter>
+  <TopMargin>0.1cm</TopMargin>
+  <PageHeight>25cm</PageHeight>
+</Report>

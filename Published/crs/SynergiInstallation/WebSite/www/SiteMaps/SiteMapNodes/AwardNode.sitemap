@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="ezyAward"  description="Award Administration" roles="Organisation Administrator, Site Administrator, Department Manager">
+    <siteMapNode url="DepartmentManager/UpdateLoadings.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Update Loadings"  description="Update Loadings" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode url="OrganisationAdmin/LoadingCategory.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Loading Categories" description="Loading Categories" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="OrganisationAdmin/HolidayLoading.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Public Holiday Loadings" description="Public Holiday Loading" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="OrganisationAdmin/ShiftLoadingAdmin.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Shift Loadings" description="Shift Loadings" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="OrganisationAdmin/AwardAdmin.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Awards" description="Award Administration" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/SiteAwardAdmin.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Link Awards" description="Associate Awards with Sites" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/SitePublicHolidaysAdmin.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Link Public Holidays" description="Associate Public Holidays with Sites" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+  </siteMapNode>
+</siteMap>

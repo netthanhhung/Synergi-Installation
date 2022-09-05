@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Default.aspx" title="Home"  description="Home Page" roles="*" />
+  <siteMapNode title="ezyRevenue"  description="Revenue Maintenance" roles="Organisation Administrator, Site Administrator, Department Manager">
+    <siteMapNode url="SiteAdmin/PickupChartAdmin.aspx" title="Pickup Chart" description="Pickup Chart" roles="Organisation Administrator, Site Administrator, Department Manager"></siteMapNode>
+    <siteMapNode url="SiteAdmin/MaterialisationChartAdmin.aspx" title="Materialisation Chart" description="Materialisation Chart" roles="Organisation Administrator, Site Administrator, Department Manager"></siteMapNode>
+  </siteMapNode>
+  <siteMapNode title="ezyCompetitor"  description="Competitor Reporting" roles="Organisation Administrator, Site Administrator, Department Manager" >
+    <siteMapNode url="SiteAdmin/SiteCompetitorsAdmin.aspx" title="Competitor Administration"  description="Competitor Administration" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <!--siteMapNode url="DepartmentManager/RatesChart.aspx" title="Rates Chart"  description="Rates Chart" roles="Organisation Administrator, Site Administrator, Department Manager" /-->
+    <siteMapNode url="DepartmentManager/RatesChart.aspx" title="Rates Chart"  description="Rates Chart" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode url="DepartmentManager/CompetitorRatesChart.aspx" title="Competitor Rates Chart"  description="Competitor Rates Chart" roles="Organisation Administrator, Site Administrator, Department Manager" />
+  </siteMapNode>
+  <siteMapNode url="https://ezyrates.com/home.cfm" title="ezyRates"  description="ezyRates (click to leave ezySoftware)" roles="Organisation Administrator, Site Administrator, Department Manager" />
+  <siteMapNode url="DepartmentManager/EnergyChart.aspx" title="ezyEnergy"  description="Energy Administration" roles="Organisation Administrator, Site Administrator, Department Manager" />
+  <siteMapNode url="GeneralUser/CheckInSL.aspx" title="ezyTimecard"  description="Timecard" roles="Organisation Administrator, Site Administrator, Department Manager, General User" />
+  <siteMapNode title="ezyRoster"  description="Rostering" roles="Organisation Administrator, Site Administrator, Department Manager">
+    <siteMapNode url="DepartmentManager/EmployeesRosterSL.aspx" title="Roster"  description="Roster" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode url="SiteAdmin/KpiAdmin.aspx" title="KPI Entry" description="KPI Entry" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/BudgetVarianceRoster.aspx" title="Budget Variance" description="Budget variance roster" roles="Organisation Administrator, Site Administrator, Department Manager"></siteMapNode>
+    <siteMapNode url="DepartmentManager/ProductivityReport.aspx" title="Productivity Report" description="Productivity Report" roles="Organisation Administrator, Site Administrator, Department Manager"></siteMapNode>
+    <siteMapNode url="DepartmentManager/WageOptimisationReport.aspx" title="Wage Optimisation Report" description="Wage Optimisation Report" roles="Organisation Administrator, Site Administrator, Department Manager"></siteMapNode>
+    <siteMapNode url="DepartmentManager/RosteringSL.aspx" title="Wage Optimisation Admin" description="Wage Optimisation Admin" roles="Organisation Administrator, Site Administrator, Department Manager"></siteMapNode>
+  </siteMapNode>
+  <siteMapNode title="ezyBudget"  description="Budgeting" roles="Organisation Administrator, Site Administrator, Department Manager" >
+    <siteMapNode url="SiteAdmin/KpiAdmin.aspx" title="KPI Entry" description="KPI Entry" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/RevenueEntryAdmin.aspx" title="Sales Entry"  description="Sales Entry" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode url="SiteAdmin/ForecastEntryAdmin.aspx" title="Forecast Entry"  description="Forecast Entry" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode title="Utilities"  description="ezyBudget Utilities" roles="Organisation Administrator, Site Administrator, Department Manager">
+      <siteMapNode url="DepartmentManager/AccountCodeSearchSL.aspx" title="Account Code Search"  description="Search for an account code" roles="Organisation Administrator, Site Administrator, Department Manager" />
+      <siteMapNode url="SiteAdmin/SiteSpecificImportSL.aspx" title="Actuals Import"  description="Import actuals data" roles="Organisation Administrator, Site Administrator" />
+      <siteMapNode url="OrganisationAdmin/CompleteFinancialsSL.aspx" title="Complete Financials"  description="Complete Financials" roles="Organisation Administrator, CF Administrator" />
+    </siteMapNode>
+    <siteMapNode url="SiteAdmin/BudgetAdminSL.aspx" title="Budget Administration"  description="Lock or Restore Budgets" roles="Organisation Administrator, Site Administrator" />
+    <siteMapNode url="OrganisationAdmin/FinancialPeriods.aspx" title="Financial Periods" description="Financial Periods" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/SalesVarianceRoster.aspx" title="Sales Variance" description="Sales variance" roles="Organisation Administrator, Site Administrator, Department Manager"></siteMapNode>
+  </siteMapNode>
+  <siteMapNode url="DepartmentManager/EmployeesSL.aspx" title="ezyEmployee"  description="Employee Administration" roles="Organisation Administrator, Site Administrator, Department Manager" />
+  <siteMapNode title="ezyAward"  description="Award Administration" roles="Organisation Administrator, Site Administrator, Department Manager">
+    <siteMapNode url="DepartmentManager/UpdateLoadings.aspx" title="Update Loadings"  description="Update Loadings" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode url="OrganisationAdmin/LoadingCategory.aspx" title="Loading Categories" description="Loading Categories" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="OrganisationAdmin/HolidayLoading.aspx" title="Public Holiday Loadings" description="Public Holiday Loading" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="OrganisationAdmin/ShiftLoadingAdmin.aspx" title="Shift Loadings" description="Shift Loadings" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="OrganisationAdmin/AwardAdmin.aspx" title="Awards" description="Award Administration" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/SiteAwardAdmin.aspx" title="Link Awards" description="Associate Awards with Sites" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/SitePublicHolidaysAdmin.aspx" title="Link Public Holidays" description="Associate Public Holidays with Sites" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+  </siteMapNode>
+  <siteMapNode title="ezyCustomer"  description="Customer Administration" roles="Organisation Administrator, Site Administrator, Department Manager" >
+    <siteMapNode url="SiteAdmin/ForecastDistributionChannelsSaleAdmin.aspx" title="Customer Forecasts"  description="Customer Forecasts" roles="Organisation Administrator, Site Administrator, Department Manager" />
+	 <siteMapNode url="SiteAdmin/ForecastDistributionChannelsGMAdmin.aspx" title="Distribution Channel Forecasts"  description="Distribution Channel Forecasts" roles="Organisation Administrator, Site Administrator, Department Manager" />
+	 <siteMapNode url="SiteAdmin/DistributionChannelAdmin.aspx" title="Customer Administration"  description="Customer Administration" roles="Organisation Administrator, Site Administrator, Department Manager" />
+  </siteMapNode>
+  <siteMapNode url="DepartmentManager/Reports.aspx" title="Reports"  description="Reports" roles="Organisation Administrator, Site Administrator, Department Manager" />
+  <siteMapNode url="PortalAdmin/PortalAdmin.aspx" title="Portal Administration" description="Portal Administration" roles="Portal Administrator"></siteMapNode>
+  <siteMapNode title="Administration"  description="Administration" roles="Organisation Administrator, Site Administrator">
+    <siteMapNode url="OrganisationAdmin/OrganisationAdmin.aspx" title="Sites" description="Site Settings" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="OrganisationAdmin/DepartmentAdmin.aspx" title="Departments" description="Departments" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/SiteDepartmentsAdmin.aspx" title="Link Departments" description="Associate Departments with Sites" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/CustomerAdmin.aspx" title="Customer/Services"  description="Customer/Services" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode url="DepartmentManager/Invoicing.aspx" title="Service Invoicing" description="Service Invoicing" roles="Organisation Administrator, Site Administrator, Department Manager"></siteMapNode>
+  </siteMapNode>
+  <siteMapNode title="Change Password" description="Change Password" url="ChangePasswordSL.aspx" roles="*"></siteMapNode>
+  <siteMapNode url="Logon.aspx?Logout=true" title="Logout"  description="Logout" roles="*" />
+</siteMap>

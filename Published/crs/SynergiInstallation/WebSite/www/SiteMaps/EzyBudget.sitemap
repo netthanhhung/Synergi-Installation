@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Default.aspx" title="Home"  description="Home Page" roles="*">
+    <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/BudgetNode.sitemap"></siteMapNode>
+    <siteMapNode title="Other ezyModules" description="Other ezyModules" roles="Organisation Administrator, Site Administrator, Department Manager, General User">
+      <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/EmployeeNode.sitemap"></siteMapNode>
+      <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/TimeCardNode.sitemap"></siteMapNode>
+      <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/RosterNode.sitemap"></siteMapNode>
+      <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/RevenueNode.sitemap"></siteMapNode>
+      <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/AwardNode.sitemap"></siteMapNode>
+      <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/CompetitorNode.sitemap"></siteMapNode>
+      <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/EnergyNode.sitemap"></siteMapNode>
+      <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/CustomerNode.sitemap"></siteMapNode>
+      <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/ezyRatesNode.sitemap"></siteMapNode>
+    </siteMapNode>
+    <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/ReportsNode.sitemap"></siteMapNode>
+    <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/PortalAdminNode.sitemap"></siteMapNode>
+    <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/AdminNode.sitemap"></siteMapNode>
+    <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/ChangePasswordNode.sitemap"></siteMapNode>
+    <siteMapNode siteMapFile="~/SiteMaps/SiteMapNodes/LogoutNode.sitemap"></siteMapNode>    
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="DepartmentManager/Reports.aspx" title="Reports"  description="Reports" roles="Organisation Administrator, Site Administrator, Department Manager" />
+</siteMap>

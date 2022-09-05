@@ -1,0 +1,126 @@
+------------------START----------------------
+DEV Timestamp: 04-Nov-2013 08:19:41
+
+Message: RequestUri: http://localhost/
+System.Exception: Error HRESULT E_FAIL has been returned from a call to a COM component.
+   at MS.Internal.XcpImports.CheckHResult(UInt32 hr)
+   at MS.Internal.XcpImports.SetValue(IManagedPeerBase obj, DependencyProperty property, String s)
+   at MS.Internal.XcpImports.SetValue(IManagedPeerBase doh, DependencyProperty property, Object obj)
+   at System.Windows.DependencyObject.SetObjectValueToCore(DependencyProperty dp, Object value)
+   at System.Windows.DependencyObject.SetEffectiveValue(DependencyProperty property, EffectiveValueEntry& newEntry, Object newValue)
+   at System.Windows.DependencyObject.UpdateEffectiveValue(DependencyProperty property, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, ValueOperation operation)
+   at System.Windows.DependencyObject.SetValueInternal(DependencyProperty dp, Object value, Boolean allowReadOnlySet, Boolean isBindingInStyleSetter)
+   at System.Windows.ResourceDictionary.set_Source(Uri value)
+   at Rockford.TimeClock.Silverlight.UI.Globals.ApplyTheme(String themeName, Boolean reloadPage)
+   at Rockford.TimeClock.Silverlight.UI.App.GetGlobalVariableCompleted(GlobalVariable itemsSource)
+   at Rockford.TimeClock.Silverlight.UI.MembershipServiceHelper.proxy_GetGlobalVariableCompleted(Object sender, GetGlobalVariableCompletedEventArgs e)
+   at XnHotelSystems.Synergi.SL.ServiceReferences.Internal.TimeClockMembershipService.TimeClockMembershipServiceClient.OnGetGlobalVariableCompleted(Object state)
+
+Category: default
+
+Priority: -1
+
+EventId: 0
+
+Severity: Error
+
+Title: v2.13.0.3418 - (24-Sep-2013) [Client]
+
+Machine: THANHHUNG-PC
+
+App Domain: /LM/W3SVC/2/ROOT-4-130280267646168520
+
+ProcessId: 6836
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:
+
+Extended Properties: 
+------------------END------------------------
+------------------START----------------------
+DEV Timestamp: 04-Nov-2013 08:21:33
+
+Message: RequestUri: http://localhost/
+System.Exception: Error HRESULT E_FAIL has been returned from a call to a COM component.
+   at MS.Internal.XcpImports.CheckHResult(UInt32 hr)
+   at MS.Internal.XcpImports.SetValue(IManagedPeerBase obj, DependencyProperty property, String s)
+   at MS.Internal.XcpImports.SetValue(IManagedPeerBase doh, DependencyProperty property, Object obj)
+   at System.Windows.DependencyObject.SetObjectValueToCore(DependencyProperty dp, Object value)
+   at System.Windows.DependencyObject.SetEffectiveValue(DependencyProperty property, EffectiveValueEntry& newEntry, Object newValue)
+   at System.Windows.DependencyObject.UpdateEffectiveValue(DependencyProperty property, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, ValueOperation operation)
+   at System.Windows.DependencyObject.SetValueInternal(DependencyProperty dp, Object value, Boolean allowReadOnlySet, Boolean isBindingInStyleSetter)
+   at System.Windows.ResourceDictionary.set_Source(Uri value)
+   at Rockford.TimeClock.Silverlight.UI.Globals.ApplyTheme(String themeName, Boolean reloadPage)
+   at Rockford.TimeClock.Silverlight.UI.App.GetGlobalVariableCompleted(GlobalVariable itemsSource)
+   at Rockford.TimeClock.Silverlight.UI.MembershipServiceHelper.proxy_GetGlobalVariableCompleted(Object sender, GetGlobalVariableCompletedEventArgs e)
+   at XnHotelSystems.Synergi.SL.ServiceReferences.Internal.TimeClockMembershipService.TimeClockMembershipServiceClient.OnGetGlobalVariableCompleted(Object state)
+
+Category: default
+
+Priority: -1
+
+EventId: 0
+
+Severity: Error
+
+Title: v2.13.0.3418 - (24-Sep-2013) [Client]
+
+Machine: THANHHUNG-PC
+
+App Domain: /LM/W3SVC/2/ROOT-4-130280267646168520
+
+ProcessId: 6836
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:
+
+Extended Properties: 
+------------------END------------------------
+------------------START----------------------
+DEV Timestamp: 04-Nov-2013 08:25:36
+
+Message: RequestUri: http://localhost/
+System.Exception: Error HRESULT E_FAIL has been returned from a call to a COM component.
+   at MS.Internal.XcpImports.CheckHResult(UInt32 hr)
+   at MS.Internal.XcpImports.SetValue(IManagedPeerBase obj, DependencyProperty property, String s)
+   at MS.Internal.XcpImports.SetValue(IManagedPeerBase doh, DependencyProperty property, Object obj)
+   at System.Windows.DependencyObject.SetObjectValueToCore(DependencyProperty dp, Object value)
+   at System.Windows.DependencyObject.SetEffectiveValue(DependencyProperty property, EffectiveValueEntry& newEntry, Object newValue)
+   at System.Windows.DependencyObject.UpdateEffectiveValue(DependencyProperty property, EffectiveValueEntry oldEntry, EffectiveValueEntry& newEntry, ValueOperation operation)
+   at System.Windows.DependencyObject.SetValueInternal(DependencyProperty dp, Object value, Boolean allowReadOnlySet, Boolean isBindingInStyleSetter)
+   at System.Windows.ResourceDictionary.set_Source(Uri value)
+   at Rockford.TimeClock.Silverlight.UI.Globals.ApplyTheme(String themeName, Boolean reloadPage)
+   at Rockford.TimeClock.Silverlight.UI.App.GetGlobalVariableCompleted(GlobalVariable itemsSource)
+   at Rockford.TimeClock.Silverlight.UI.MembershipServiceHelper.proxy_GetGlobalVariableCompleted(Object sender, GetGlobalVariableCompletedEventArgs e)
+   at XnHotelSystems.Synergi.SL.ServiceReferences.Internal.TimeClockMembershipService.TimeClockMembershipServiceClient.OnGetGlobalVariableCompleted(Object state)
+
+Category: default
+
+Priority: -1
+
+EventId: 0
+
+Severity: Error
+
+Title: v2.13.0.3418 - (24-Sep-2013) [Client]
+
+Machine: THANHHUNG-PC
+
+App Domain: /LM/W3SVC/2/ROOT-4-130280267646168520
+
+ProcessId: 6836
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:
+
+Extended Properties: 
+------------------END------------------------

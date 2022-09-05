@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="ezyBudget"  description="Budgeting" roles="Organisation Administrator, Site Administrator, Department Manager" >
+    <siteMapNode url="SiteAdmin/RevenueEntryAdmin.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Sales Entry"  description="Sales Entry" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode url="SiteAdmin/ForecastEntryAdmin.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Forecast Entry"  description="Forecast Entry" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Utilities"  description="ezyBudget Utilities" roles="Organisation Administrator, Site Administrator, Department Manager">
+      <siteMapNode url="DepartmentManager/AccountCodeSearchSL.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Account Code Search"  description="Search for an account code" roles="Organisation Administrator, Site Administrator, Department Manager" />
+      <siteMapNode url="SiteAdmin/SiteSpecificImportSL.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Actuals Import"  description="Import actuals data" roles="Organisation Administrator, Site Administrator" />
+      <siteMapNode url="OrganisationAdmin/CompleteFinancialsSL.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Complete Financials"  description="Complete Financials" roles="Organisation Administrator, CF Administrator" />
+    </siteMapNode>
+    <siteMapNode url="SiteAdmin/BudgetAdminSL.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Budget Administration"  description="Lock or Restore Budgets" roles="Organisation Administrator, Site Administrator" />
+    <siteMapNode url="SiteAdmin/KpiAdmin.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> KPI Entry" description="KPI Entry" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+    <siteMapNode url="OrganisationAdmin/FinancialPeriods.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Financial Periods" description="Financial Periods" roles="Organisation Administrator"></siteMapNode>
+   <siteMapNode url="SiteAdmin/DistributionChannelAdmin.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Distribution Channel Administration"  description="Distribution Channel Administration" roles="Organisation Administrator, Site Administrator, Department Manager" />
+
+  </siteMapNode>
+</siteMap>

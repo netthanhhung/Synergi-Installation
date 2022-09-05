@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="ezyCompetitor"  description="Competitor Reporting" roles="Organisation Administrator, Site Administrator, Department Manager" >
+    <siteMapNode url="SiteAdmin/SiteCompetitorsAdmin.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Competitor Administration"  description="Competitor Administration" roles="Organisation Administrator, Site Administrator, Department Manager" />
+    <siteMapNode url="DepartmentManager/CompetitorRatesChart.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Competitor Rates Chart"  description="Competitor Rates Chart" roles="Organisation Administrator, Site Administrator, Department Manager" />
+  </siteMapNode>
+</siteMap>

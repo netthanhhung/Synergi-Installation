@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Administration"  description="Administration" roles="Organisation Administrator, Site Administrator">
+    <siteMapNode url="OrganisationAdmin/OrganisationAdmin.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Sites" description="Site Settings" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="OrganisationAdmin/DepartmentAdmin.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Departments" description="Departments" roles="Organisation Administrator"></siteMapNode>
+    <siteMapNode url="SiteAdmin/SiteDepartmentsAdmin.aspx" title="&lt;IMG SRC='../images/config.gif' align='absmiddle'> Link Departments" description="Associate Departments with Sites" roles="Organisation Administrator, Site Administrator"></siteMapNode>
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode
+	title="Administration"
+	description="Administration">
+	<siteMapNode
+	  url="/Dashboad/HomeDashboard.xaml"
+	  title="Home"
+	  description="Home Page"/>
+	<siteMapNode
+	  url="Logon.aspx?Logout=true"
+	  title="Logout"
+	  description="Logout"/>
+    <siteMapNode
+	  url="/ChangePasswordPage.xaml"
+	  title="Change Pwd"
+	  description="Change Password"/>
+	<siteMapNode
+	  url="/Dashboad/DashboardManager.xaml"
+	  title="Layout Mgr"
+	  description="Layout Manager"/>
+    <siteMapNode
+	  url="/Reports/ReportsPage.xaml"
+	  title="Reports"
+	  description="Reports"/>
+
+	<siteMapNode
+	  title="Security"
+	  description="Security Administration">
+	  <siteMapNode
+		url="/Security/UserAccountPage.xaml"
+		title="User Account Admin"
+		description="User Account Admin"/>
+	  <siteMapNode
+		url="/Security/RoleAdminPage.xaml"
+		title="Role Admin"
+		description="Security Role Admin"/>	  
+	  <siteMapNode
+		url="/Security/RoleComponentAdminPage.xaml"
+		title="Role Component Permission"
+		description="Role Component Permission"/>	
+	  <siteMapNode
+		url="/Security/UserRoleAuthAdminPage.xaml"
+		title="User Role Authorisation"
+		description="User Role Authorisation"/>
+	</siteMapNode>
+
+	<siteMapNode
+	  title="Admin"
+	  description="Administration">
+	  
+      <siteMapNode
+		url="/CentreTypesPage.xaml"
+		title="Centre Types"
+		description="Centre Types"/>
+	  <siteMapNode
+		url="/Administration/ParameterSetValuesAdminPage.xaml"
+		title="Default Values"
+		description="Default Values"/>
+	  <siteMapNode
+		url="/Administration/LicenseAdminPage.xaml"
+		title="License Admin"
+		description="License Admin"/>
+	  <siteMapNode
+		url="/Administration/PortalAdminPage.xaml"
+		title="Portal Admin"
+		description="Portal Admin"/>
+	  <siteMapNode
+		url="/Administration/SiteGroupAdminPage.xaml"
+		title="Site Group Admin"
+		description="Site Group Admin"/>
+	  <siteMapNode
+		url="/Administration/OrganisationAdminPage.xaml"
+		title="Sites"
+		description="Site Settings"/>
+	  <siteMapNode
+		url="/Administration/DepartmentAdminPage2.xaml"
+		title="Departments"
+		description="Departments"/>
+	  <siteMapNode
+		url="/Administration/SiteDepartmentsAdminPage.xaml"
+		title="Link Departments"
+		description="Associate Departments with Sites"/>
+	  <siteMapNode
+		url="/Administration/NotificationRolesAdminPage.xaml"
+		title="Notification Roles Admin"
+		description="Notification Roles Admin"/>	  
+	  <siteMapNode
+		url="/Administration/MailServiceAdminPage.xaml"
+		title="Mail Service Administration"
+		description="Mail Service Administration"/>
+	  <siteMapNode
+		url="/Administration/SMSAdminPage.xaml"
+		title="SMS and Email Policy Administration"
+		description="SMS and Email Policy Administration"/>
+      <siteMapNode
+		url="/Administration/SitePublisherAdminPage.xaml"
+		title="Publisher Configuration"
+		description="Publisher Configuration"/>
+	  <siteMapNode
+		url="/KPITypeGroupPage.xaml"
+		title="KPI Type Group"
+		description="KPI Type Group"/>
+	  <siteMapNode
+		url="/JobRolePage.xaml"
+		title="Job Role"
+		description="Job Role"/>
+	 <siteMapNode
+		url="/Administration/BatchJobLogPage.xaml"
+		title="Batch Job Log"
+		description="Batch Job Log"/>
+	</siteMapNode>
+  </siteMapNode>
+
+  <siteMapNode
+	title="Sales"
+	description="Sales">
+
+	<siteMapNode
+		url="/Sale/SalesPlannerPage.xaml"
+		title="Sales Planner"
+		description="Company Profile"/>
+	<siteMapNode
+		url="/Sale/DCRoomForecastPage.xaml"
+		title="Revenue Fcst"
+		description="Revenue Stream (Channel) Forecasts"/>
+	<siteMapNode
+		url="/DCForecast/SalesPersonForecastPage.xaml"
+		title="SalesPerson Fcst"
+		description="Sales Person Forecasts"/>
+
+    <siteMapNode
+	    title="Meetings"
+	    description="Meetings">
+
+	    <siteMapNode
+		    url="/Administration/RoomConfigurationPage.xaml"
+		    title="Room Configuration"
+		    description="Room Configuration"/>
+        <siteMapNode
+		    url="/Sale/ConferenceBusinessPage.xaml"
+		    title="Conference Bookings Dashboard"
+		    description="Conference Bookings Dashboard"/>
+        <siteMapNode
+		    url="/Yield/MiceRevParPage.xaml"
+		    title="MICE RevPAR"
+		    description="MICE RevPAR"/>
+        <siteMapNode
+		    url="/Sale/FunctionQuoteInputPage.xaml"
+		    title="Function Quote Input"
+		    description="Function Quote Input"/>
+        <siteMapNode
+		    url="/Administration/LookupTypeAdminPage.xaml"
+		    title="Conference type Admin"
+		    description="Conference type Admin"/>
+	    <siteMapNode
+		    url="/Administration/LookupValueAdminPage.xaml"
+		    title="Conference value Admin"
+		    description="Conference value Admin"/>
+
+    </siteMapNode>
+
+	<siteMapNode
+	  title="Dashboards"
+	  description="Dashboards">
+	  <siteMapNode
+		url="/Sale/SalesDashboardPage.xaml"
+		title="Sales Productivity Dashboard"
+		description="Sales Productivity Dashboard"/>
+	</siteMapNode>
+
+	<siteMapNode
+	  title="Reports"
+	  description="Reports">
+	  <siteMapNode
+	    title="Performers Sales"
+	    description="Performers Sales">
+	  	  <siteMapNode
+			url="/Sale/PerformersSalesChartPage.xaml?Type=Agent"
+			title="Agent"
+			description="Agent Best Performers"/>
+		  <siteMapNode
+			url="/Sale/PerformersSalesChartPage.xaml?Type=Company"
+			title="Company"
+			description="Company Best Performers"/>
+		  <siteMapNode
+			url="/Sale/PerformersSalesChartPage.xaml?Type=Both"
+			title="Agent &amp; Company"
+			description="Agent &amp; Company Best Performers"/>
+	  </siteMapNode>
+
+	  <siteMapNode
+		url="/Sale/MarketChartPage.xaml?ReportType=SourceOfBusiness"
+		title="Source of Business"
+		description="Source of Business"/>
+	  <siteMapNode
+		url="/Sale/MarketChartPage.xaml?ReportType=MarketSegment"
+		title="Market Segment"
+		description="Market Segment"/>
+	  <siteMapNode
+		url="/Sale/MarketChartPage.xaml?ReportType=DCByRateCode"
+		title="DC by Rate Code"
+		description="DC by Rate Code"/>
+	  <siteMapNode
+		url="/Sale/MarketChartPage.xaml?ReportType=Region"
+		title="Geographical by Region"
+		description="Geographical by Region"/>
+	  <siteMapNode
+		url="/Sale/MarketChartPage.xaml?ReportType=Country"
+		title="Geographical by Country"
+		description="Geographical by Country"/>
+	  <siteMapNode
+		url="/Sale/MarketChartPage.xaml?ReportType=GuestType"
+		title="Guest Type"
+		description="Guest Type"/>
+	  <siteMapNode
+		url="/Sale/MarketChartPage.xaml?ReportType=RoomType"
+		title="Room Type"
+		description="Room Type"/>
+	  <!--siteMapNode
+		url="/Sale/MaterialisationChartPage.xaml"
+		title="Materialisation Chart"
+		description="Materialisation Chart"/-->
+	</siteMapNode>
+
+	<siteMapNode
+	  title="Admin"
+	  description="Administration">
+	  <siteMapNode
+		url="/FileUpload.xaml"
+		title="Sales Person Image Manager"
+		description="Sales Person Image Manager"/>
+		<siteMapNode
+		url="/Sale/NextActivityAdminPage.xaml"
+		title="Next Activity Admin"
+		description="Next Activity Admin"/>
+	  <siteMapNode
+		url="/Budget/KpiAdminPage.xaml?mode=2"
+		title="KPI Entry (Forecast)"
+		description="KPI Entry (Forecast)"/>
+	</siteMapNode>
+
+  </siteMapNode>
+
+  <siteMapNode
+	title="Yield"
+	description="Yield">
+
+    <siteMapNode
+	  title="Competitors"
+	  description="Competitors">
+
+	  <siteMapNode
+	    title="Reports"
+	    description="Reports">
+		<siteMapNode
+		  url="/Competitors/CompetitorRatesChartPage2.xaml"
+		  title="Competitor Rates Chart"
+		  description="Competitor Rates Chart"/>
+	    <siteMapNode
+		  url="/Competitors/CompetitorStatisticsReportPage.xaml"
+		  title="Competitor Statistics Report"
+		  description="Competitor Statistics Report"/>
+	  </siteMapNode>
+
+	  <siteMapNode
+	      title="Links"
+	      description="Links">
+	      <siteMapNode
+		    url="http://www.accorfranchise.com.au/#/welcome"
+		    title="Franchise Net"
+		    description="Franchise Net Login"/>
+	      <siteMapNode
+		    url="https://www.strglobal.com/Login/Login.aspx"
+		    target="_blank"
+		    title="The Bench Reports"
+		    description="The Bench Reports"/>
+	      <siteMapNode
+		    url=""
+		    title="Rates Alarm Reports"
+		    description="Rates Alarm Reports"/>
+	  </siteMapNode>
+
+	  <siteMapNode
+	      title="Administration"
+	      description="Administration">	      
+          <siteMapNode
+		    url="/Competitors/PropertyCompetitorAdminPage.xaml"
+		    title="Property-Competitor Administration"
+		    description="Property-Competitor Administration"/>
+	  </siteMapNode>
+    </siteMapNode>
+
+	<siteMapNode
+	  title="Rate"
+	  description="Rate Management">
+	  <siteMapNode
+		url="/Yield/SeasonAdminPage.xaml"
+		title="Demand Level Calendar"
+		description="Demand Level Calendar"/>
+	  <siteMapNode
+		url="/Yield/DaymarkerCalendarPage.xaml"
+		title="Daymarker Calendar"
+		description="Daymarker Calendar"/>
+	</siteMapNode>
+	<siteMapNode
+	  title="Inventory"
+	  description="Inventory Management">
+	  <siteMapNode
+		url="/Yield/RateYieldLevelPanelPage.xaml"
+		title="Yield Level Pane"
+		description="Yield Level Pane"/>
+	  <siteMapNode
+		url="/Yield/BookingRulePanelPage.xaml"
+		title="Booking Rules"
+		description="Booking Rules"/>
+	</siteMapNode>
+	<siteMapNode
+	  title="Disp Analysis"
+	  description="Displacement Analysis">
+	  <siteMapNode
+		url="/Yield/DisplacementAnalysisCalendarPage.xaml"
+		title="Run Displacement Analysis"
+		description="Run Displacement Analysis"/>
+	  <siteMapNode
+		url="/Yield/MinimumRateThresholdPage.xaml"
+		title="Minimum Rate Threshold"
+		description="Minimum Rate Threshold"/>
+	  <siteMapNode
+		url="/Yield/DisplacementAnalysisResultPage.xaml"
+		title="Analysis Results"
+		description="Analysis Results"/>
+
+	</siteMapNode>
+	<siteMapNode
+	  title="Dashboards"
+	  description="Dashboards">
+	  <siteMapNode
+		url="/PickupMomentumChartPage.xaml"
+		title="Booking Curve Dashboard"
+		description="Booking Curve Dashboard (Daily Demand Charts / Pickup Momentum Charts)"/>
+	  <siteMapNode
+		url="/YieldProfilePage.xaml"
+		title="Yield Dashboard"
+		description="Yield Dashboard"/>
+	  <siteMapNode
+		url="/PickupChartPage.xaml"
+		title="Pickup Chart"
+		description="Pickup Chart"/>
+	  <siteMapNode
+		url="/Yield/YieldAllocationPage.xaml"
+		title="Daily Yield Allocation"
+		description="Daily Yield Allocation"/>	  
+	</siteMapNode>
+	<siteMapNode
+	  title="Reports"
+	  description="Reports">
+	  <siteMapNode
+		url="/Yield/DayMarkerReportPage.xaml"
+		title="Daymarker Report"
+		description="Daymarker Report"/>
+	  <siteMapNode
+		url="/Yield/DayMarkerAuditTrailPage.xaml"
+		title="Audit Trail"
+		description="Audit Trail"/>
+	  <siteMapNode
+		url="/Yield/RateSeasonUpdateReportPage.xaml"
+		title="Rate/Demand Level Update"
+		description="Rate/Demand Level Update"/>
+
+	</siteMapNode>
+	<siteMapNode
+	  title="Admin"
+	  description="Administration">
+      <siteMapNode
+		url="/Yield/DemandLevelAdminPage.xaml"
+		title="Demand Level Administration"
+		description="Demand Level Administration"/>
+	  <siteMapNode
+		url="/Yield/SiteSeasonAdminPage.xaml"
+		title="Site Demand Level revPAR Administration"
+		description="Site Demand Level revPAR Administration"/>
+	  <siteMapNode
+		url="/Yield/SiteDemandCurvePage.xaml"
+		title="Demand Curve Administration"
+		description="Demand Curve Administration"/>
+	  <siteMapNode
+		url="/Yield/DaymarkerAdministrationPage.xaml"
+		title="Daymarker Administration"
+		description="Daymarker Administration"/>
+	  <siteMapNode
+		url="/Yield/DaymarkerTypeAdministrationPage.xaml"
+		title="Daymarker Type Administration"
+		description="Daymarker Type Administration"/>	  
+	  <siteMapNode
+		url="/Yield/YieldEventAdminPage.xaml"
+		title="Yield Event Administration"
+		description="Yield Event Administration"/>
+	  <siteMapNode
+		url="/Yield/SiteYieldLevelAdminPage.xaml"
+		title="Yield Level Administration"
+		description="Yield Level Administration"/>
+	  <siteMapNode
+		url="/Yield/YieldStructureAdminPage.xaml"
+		title="Yield Structure Administration"
+		description="Yield Structure Administration"/>
+
+	  <siteMapNode
+		url="/Yield/YieldAllocationTemplatePage.xaml"
+		title="Yield Allocation Template"
+		description="Yield Allocation Template"/>
+	  <siteMapNode
+		url="/Yield/RevenueStreamMappingPage.xaml"
+		title="Revenue Stream Mapping"
+		description="Revenue Stream Mapping"/>
+	  <siteMapNode
+	    title="Links"
+	    description="Links">
+		<siteMapNode
+		  url="https://ezyrates.com/home.cfm"
+		  title="ezyRates"
+		  description="ezyRates (click to leave Synergi)"/>
+		<siteMapNode
+		  url="http://www.siteminder.com/login-page"
+		  title="SiteMinder"
+		  description="SiteMinder (click to leave Synergi)"/>
+	  </siteMapNode>
+	</siteMapNode>
+	
+  </siteMapNode>
+
+  <siteMapNode
+	title="Energy"
+	description="Energy">
+
+	<siteMapNode
+	  title="Dashboards"
+	  description="Dashboards">
+	  <siteMapNode
+		url="/Energy/EnergyDeliveredChartPage.xaml"
+		title="Energy Chart (EMS)"
+		description="Energy Cube Dashboard"/>
+	  <siteMapNode
+		url="/Energy/EnergyChartPage.xaml"
+		title="Energy Chart (P&amp;L)"
+		description="Energy Administration"/>
+	</siteMapNode>
+
+	<siteMapNode
+	  title="Reports"
+	  description="Reports">
+	  <siteMapNode
+		url="/Energy/EmsChartPage.xaml?PeriodType=6"
+		title="Hourly EMS Chart"
+		description="Hourly EMS Chart"/>
+	  <siteMapNode
+		url="/Energy/EmsChartPage.xaml?PeriodType=1"
+		title="Daily EMS Chart"
+		description="Daily EMS Chart"/>
+	  <siteMapNode
+		url="/Energy/EmsChartPage.xaml?PeriodType=2"
+		title="Weekly EMS Chart"
+		description="Weekly EMS Chart"/>
+	  <siteMapNode
+		url="/Energy/EmsChartPage.xaml?PeriodType=3"
+		title="Monthly EMS Chart"
+		description="Monthly EMS Chart"/>
+	  <siteMapNode
+		url="/Energy/EmsChartPage.xaml?PeriodType=5"
+		title="Yearly EMS Chart"
+		description="Yearly EMS Chart"/>
+	</siteMapNode>
+
+	<siteMapNode
+	  title="Links"
+	  description="Links">
+	  <siteMapNode
+		url="http://150.101.176.129/MetaSys/"
+		title="BMS Reports"
+		description="BMS Reports"
+		target="_blank"/>
+	  <siteMapNode
+		url="http://10.10.0.66/web"
+		title="EMS Reports"
+		description="EMS Reports"
+		target="_blank"/>
+	</siteMapNode>
+
+  </siteMapNode>
+
+  <siteMapNode
+	title="Employees"
+	description="Employees">
+    <siteMapNode
+	  url="/Employees/CurrentEmployeePage.xaml"
+	  title="Self Mgmt"
+	  description="Employee Self Management"/>
+	<siteMapNode
+	  url="/Employees/EmployeesPage.xaml"
+	  title="Employee Mgmt"
+	  description="Employee Management"/>
+
+    <siteMapNode
+	  title="Reports"
+	  description="Reports">
+	    <siteMapNode
+		  url="/Employees/HRReportPage.xaml?ReportType=1"
+		  title="Work Population Structure"
+		  description="Work Population Structure"/>
+	    <siteMapNode
+		  url="/Employees/HRReportPage.xaml?ReportType=2"
+		  title="Number of employees / Room"
+		  description="Number of employees / Room"/>
+	    <siteMapNode
+		  url="/Employees/HRReportPage.xaml?ReportType=3"
+		  title="Seniority Breakdown"
+		  description="Seniority Breakdown"/>
+	    <siteMapNode
+		  url="/Employees/HRReportPage.xaml?ReportType=4"
+		  title="Turnover Rate"
+		  description="Turnover Rate"/>
+	    <siteMapNode
+		  url="/Employees/HRReportPage.xaml?ReportType=5"
+		  title="Age Breakdown"
+		  description="Age Breakdown"/>
+	    <siteMapNode
+		  url="/Employees/HRReportPage.xaml?ReportType=6"
+		  title="Training"
+		  description="Training"/>
+	    <siteMapNode
+		  url="/Employees/HRReportPage.xaml?ReportType=7"
+		  title="Staff Absentee Rate"
+		  description="Staff Absentee Rate"/>
+	    <siteMapNode
+		  url="/Employees/HRReportPage.xaml?ReportType=8"
+		  title="Staff Bonuses Paid"
+		  description="Staff Bonuses Paid"/>
+		<siteMapNode
+		  url="/Employees/EmployeeSatisfactionPage.xaml"
+		  title="Employee Satisfaction"
+		  description="Employee Satisfaction"/>
+    </siteMapNode>
+    
+  </siteMapNode>
+
+  <siteMapNode
+	title="Operations"
+	description="Operations">
+
+    <siteMapNode
+	  url="/Operations/TimecardPage.xaml"
+	  title="Timecard"
+	  description="Timecard" />
+    <siteMapNode
+	  url="/Operations/EmployeesRosterPage1.xaml"
+	  title="Roster"
+	  description="Roster" />
+	<siteMapNode
+		url="/Sale/DMForecastPage.xaml"
+		title="Dept Revenue Fcst"
+		description="Dept Revenue Forecasts" />
+	<siteMapNode
+		url="/Sale/DCRoomForecastPage.xaml"
+		title="Revenue Fcst (manual)"
+		description="Revenue Stream (Channel) Forecasts"/>
+    <siteMapNode
+		url="/Operations/RevenueStreamForecastInflationPage.xaml"
+		title="Revenue Fcst(inflation)"
+		description="Revenue Stream (Channel) Forecasts Inflation"/>
+
+    <siteMapNode
+	  title="KPI Entry"
+	  description="KPI Entry">
+	  <siteMapNode
+		url="/Budget/KpiAdminPage.xaml?mode=3"
+		title="KPI Entry - Wage Op"
+		description="KPI Entry - Wage Op" />
+      <siteMapNode
+		url="/Budget/KpiAdminPage.xaml?mode=4"
+		title="KPI Entry - Guest Feedback"
+		description="KPI Entry - Guest Feedback"/>
+      <siteMapNode
+		url="/Budget/KpiAdminPage.xaml?mode=6"
+		title="KPI Entry - Employeee Feedback"
+		description="KPI Entry - Employeee Feedback"/>
+      <siteMapNode
+		url="/Budget/KpiAdminPage.xaml?mode=7"
+		title="KPI Entry - Energy"
+		description="KPI Entry - Energy" />
+      <siteMapNode
+		url="/Budget/KpiAdminPage.xaml?mode=8"
+		title="KPI Entry - Competitor"
+		description="KPI Entry - Competitor" />
+      <siteMapNode
+		url="/Budget/KpiAdminPage.xaml?mode=9"
+		title="KPI Entry - Holdings"
+		description="KPI Entry - Holdings" />
+      <siteMapNode
+		url="/Budget/KpiAdminPage.xaml?mode=5"
+		title="KPI Entry - Custom"
+		description="KPI Entry - Custom" />
+	</siteMapNode>
+
+    <siteMapNode
+		title="Dashboards"
+		description="Dashboards">
+      <siteMapNode
+		url="/Reports/WageOptimisationReportPage.xaml"
+		title="Wage Optimisation Dashboard"
+		description="Wage Optimisation Dashboard" />
+	  <siteMapNode
+		url="/Reports/WageOptimisationReportPage1.xaml"
+		title="Wage Optimisation Dashboard - Old"
+		description="Wage Optimisation Dashboard - Old" />
+      <siteMapNode
+		url="/Operations/WageOptHourlyPage.xaml"
+		title="Wage Optimisation Hourly"
+		description="Wage Optimisation Hourly" />
+      <siteMapNode
+	    url="/Operations/DepartmentManagerPage.xaml"
+	    title="Balanced Scorecards"
+	    description="Balanced Scorecards" />
+      <siteMapNode
+		url="/Operations/RoomAttendantsProductivityPage.xaml"
+		title="Room Attendant Assignment"
+		description="Room Attendant Assignment"/>
+    </siteMapNode>
+
+    <siteMapNode
+	  title="Reports"
+	  description="Reports">
+	  <siteMapNode
+		url="/Reports/ProductivityReportPage.xaml"
+		title="Productivity Report"
+		description="Productivity Report"/>
+	  <siteMapNode
+		url="/BudgetVarianceRosterPage.xaml"
+		title="Budget Variance (Roster)"
+		description="Budget Variance (Roster)"/>
+	  <siteMapNode
+		url="/Reports/RosterVariancePage.xaml"
+		title="Roster Variance"
+		description="Roster Variance"/>
+	  <siteMapNode
+		url="/Reports/RosterVarianceDetailedPage.xaml"
+		title="Roster Variance Detailed"
+		description="Roster Variance Detailed"/>
+      <siteMapNode
+		url="/Reports/RosterPayrollAnalysisPage.xaml"
+		title="Roster Payroll Analysis"
+		description="Roster Payroll Analysis"/>
+	  <siteMapNode
+		url="/Operations/PayrollAnalysisPage.xaml"
+		title="Payroll Analysis"
+		description="Payroll Analysis Report"/>
+	  <siteMapNode
+		url="/Operations/PayrollAnalysisByCostCentrePage.xaml"
+		title="Payroll Analysis By Cost Centre"
+		description="Payroll Analysis By Cost Centre Report"/>
+	</siteMapNode>
+
+    <siteMapNode
+	  title="Admin"
+	  description="Administration">
+        <siteMapNode
+	    title="Award Admin"
+	    description="Award Admin">
+        <siteMapNode
+		  url="/Operations/OvertimeAdminPage.xaml"
+		  title="Overtime Administration"
+		  description="Overtime Administration"/>
+	    <siteMapNode
+		  url="/Operations/UpdateLoadingPage.xaml"
+		  title="Update Loadings"
+		  description="Update Loadings"/>
+	    <siteMapNode
+		  url="/Operations/LoadingCategoryPage.xaml"
+		  title="Loading Categories"
+		  description="Loading Categories"/>
+	    <siteMapNode
+		  url="/Operations/HolidayLoadingPage.xaml"
+		  title="Public Holiday Loadings"
+		  description="Public Holiday Loading"/>
+	    <siteMapNode
+		  url="/Operations/ShiftLoadingPage.xaml"
+		  title="Shift Loadings"
+		  description="Shift Loadings"/>
+	    <siteMapNode
+		  url="/Operations/AwardAdminPage.xaml"
+		  title="Awards"
+		  description="Award Administration"/>
+	    <siteMapNode
+		  url="/Operations/SiteAwardAdminPage.xaml"
+		  title="Link Awards"
+		  description="Associate Awards with Sites"/>
+	    <siteMapNode
+		  url="/Operations/SitePublicHolidayAdminPage.xaml"
+		  title="Link Public Holidays"
+		  description="Associate Public Holidays with Sites"/>
+      </siteMapNode>
+      <siteMapNode
+	    title="Productivity Admin"
+	    description="Productivity Admin">
+        <siteMapNode
+		  url="/Operations/ProductivityAdminPage.xaml"
+		  title="Productivity Admin"
+		  description="Productivity Admin"/>
+        <siteMapNode
+		  url="/Operations/RoomServiceAdminPage.xaml"
+		  title="Room Service Admin"
+		  description="Room Service Admin"/>
+        <siteMapNode
+		  url="/Operations/RoomStatusAdminPage.xaml"
+		  title="Room Status Admin"
+		  description="Room Status Admin"/>
+        <siteMapNode
+		  url="/Operations/RoomAdminPage.xaml"
+		  title="Room Admin"
+		  description="Room Admin"/>
+      </siteMapNode>
+
+      <siteMapNode
+	    title="Customer Admin"
+	    description="Customer Admin">
+        <siteMapNode
+		  url="/Administration/ServiceInvoicingPage.xaml"
+		  title="Invoicing"
+		  description="Invoicing"/>
+        <siteMapNode
+		  url="/Administration/CustomerAdminPage.xaml"
+		  title="Customer Administration"
+		  description="Customer Administration"/>
+      </siteMapNode>
+	  <siteMapNode
+	    title="Roster Admin"
+	    description="Roster Admin">
+	    <siteMapNode
+		  url="/Operations/RosterShiftStatusAdminPage.xaml"
+		  title="Roster Shift Status Admin"
+		  description="Roster Shift Status Admin"/>
+      </siteMapNode>
+    </siteMapNode>
+
+  </siteMapNode>
+
+  <siteMapNode
+	title="Guests"
+	description="Guests">
+
+	<siteMapNode
+	  title="Reports"
+	  description="Reports">
+	  <siteMapNode
+		url="/FeedbackChartPage.xaml"
+		title="Guest Feedback Chart"
+		description="Guest Feedback Chart"/>
+	</siteMapNode>
+
+	<siteMapNode
+	  title="Links"
+	  description="Links">
+	  <siteMapNode
+		url=""
+		title="Medallia Reports"
+		description="Medallia Reports"/>
+	</siteMapNode>
+
+  </siteMapNode>
+
+  <siteMapNode
+	title="IBudget"
+	description="IBudget">
+
+	<siteMapNode
+		url="/Budget/RevenueEntryAdminPage2.xaml"
+		title="Sales Entry"
+		description="Sales Entry"/>
+	<siteMapNode
+		url="/Budget/ForecastEntryAdminPage2.xaml"
+		title="Forecast Entry"
+		description="Forecast Entry" />
+	<siteMapNode
+		url="/Budget/KpiAdminPage.xaml?mode=1"
+		title="KPI Entry (P&amp;L)"
+		description="KPI Entry (P&amp;L)"/>
+
+    <siteMapNode
+	  title="Forecast Copying"
+	  description="Forecast Copying">
+      <!--siteMapNode
+		url="/Budget/ForecastCopyingPage.xaml"
+		title="Forecasts with Inflation"
+		description="Forecasts with Inflation"/-->
+      <siteMapNode
+		url="/Budget/FiveYearsForecastWithInflationPage.xaml"
+		title="Five Year Forecasts with Inflation"
+		description="Five Year Forecasts with Inflation"/>
+	  <siteMapNode
+		url="/Budget/ForecastToEstimateCopyingPage.xaml"
+		title="Forecasts to Estimates"
+		description="Forecasts to Estimates"/>
+      <siteMapNode
+		url="/Budget/ForecastKpiCopyingPage.xaml"
+		title="Forecast KPI Copying"
+		description="Forecast KPI Copying"/>
+	  <siteMapNode
+		url="/Budget/EstimatesKpiCopyingPage.xaml"
+		title="Estimate KPI Copying"
+		description="Estimate KPI Copying"/>
+	
+	</siteMapNode>
+
+	<siteMapNode
+	  title="Reports"
+	  description="Reports">
+	  <siteMapNode
+		url="/SalesVarianceRosterPage.xaml"
+		title="Sales Variance"
+		description="Sales variance"/>
+	</siteMapNode>
+
+	<siteMapNode
+	  title="Admin"
+	  description="Administration">
+	  <siteMapNode
+		url="/Budget/BudgetAdminPage.xaml"
+		title="Budget Administration"
+		description="Lock or Restore Budgets"/>
+	  <siteMapNode
+		url="/Budget/FinancialPeriodPage.xaml"
+		title="Financial Periods"
+		description="Financial Periods"/>
+	  <siteMapNode
+		url="/Budget/SiteSpecificImportPage.xaml"
+		title="Actuals Import"
+		description="Import actuals data"/>
+      <siteMapNode
+		url="/Budget/CompleteFinancialsPage.xaml"
+		title="Complete Financials"
+		description="Complete Financials"/>
+	  <siteMapNode
+		url="/Budget/AccountCodeSearchPage.xaml"
+		title="Account Code Search"
+		description="Search for an account code"/>
+	</siteMapNode>
+
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="ezyCustomer"  description="Customer Administration" roles="Organisation Administrator, Site Administrator" >
+    <siteMapNode url="SiteAdmin/CustomerAdmin.aspx" title="&lt;IMG SRC='../images/transparent.gif' align='absmiddle'> Customer Administration"  description="Customer Administration" roles="Organisation Administrator, Site Administrator" />
+  </siteMapNode>
+</siteMap>

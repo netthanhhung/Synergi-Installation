@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Planet.Rockford.TimeClock.Web.UI.TimeClockDataService" CodeBehind="TimeClockDataService.svc.cs" %>

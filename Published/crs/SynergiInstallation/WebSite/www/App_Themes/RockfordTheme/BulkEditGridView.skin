@@ -1,0 +1,17 @@
+<%@ Register TagPrefix="ps" Namespace="Planet.Web.UI.WebControls" Assembly="Planet.Web" %>
+<ps:BulkEditGridView runat="server"
+         AutoGenerateColumns="False" 
+         BorderColor="#6c83ae" 
+         BackColor="White" BorderStyle="Solid" 
+         BorderWidth="1px" CellPadding="1" 
+         Font-Names="Arial,Tahoma,Sans-Serif"
+         Font-Size="10pt" ForeColor="#003399"> 
+        <HeaderStyle CssClass="GridHeader"/>
+        <FooterStyle CssClass="GridFooter" />
+        <RowStyle CssClass="Grid" />
+        <AlternatingRowStyle CssClass="GridAlt"/>
+        <EditRowStyle />
+        <SelectedRowStyle CssClass="GridSelected"/>
+        <PagerStyle CssClass="GridPager"/>
+        <EmptyDataRowStyle CssClass="GridEmptyRow" />
+</ps:BulkEditGridView>
